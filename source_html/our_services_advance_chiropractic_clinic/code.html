@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Services | Advance Chiropractic Clinic</title>
+<meta content="Explore the comprehensive chiropractic and physiotherapy services offered by Advance Chiropractic Clinic, including Cardiac Rehabilitation, Therapeutic Massage, and more." name="description"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f7fafc",
+                    "surface-container-lowest": "#ffffff",
+                    "success-green": "#2F855A",
+                    "surface-container-low": "#f1f4f6",
+                    "on-surface": "#181c1e",
+                    "background": "#f7fafc",
+                    "clinical-purple": "#6B46C1",
+                    "surface-tint": "#455f88",
+                    "on-secondary-fixed": "#23005c",
+                    "error-container": "#ffdad6",
+                    "error-red": "#C53030",
+                    "on-surface-variant": "#43474e",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "surface": "#f7fafc",
+                    "on-tertiary-container": "#4cadab",
+                    "surface-dim": "#d7dadc",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#003d3c",
+                    "surface-container-high": "#e5e9eb",
+                    "soft-blue-accent": "#EBF8FF",
+                    "primary": "#002045",
+                    "on-background": "#181c1e",
+                    "surface-container": "#ebeef0",
+                    "tertiary-fixed": "#94f2f0",
+                    "on-tertiary-fixed": "#00201f",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "primary-fixed-dim": "#adc7f7",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container-highest": "#e0e3e5",
+                    "outline": "#74777f",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-fixed-variant": "#522aa7",
+                    "tertiary": "#002625",
+                    "healthcare-teal": "#319795",
+                    "primary-fixed": "#d6e3ff",
+                    "on-primary-container": "#86a0cd",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#00504e",
+                    "on-secondary-container": "#39008c",
+                    "on-primary-fixed": "#001b3c",
+                    "on-error-container": "#93000a",
+                    "secondary": "#6b46c1",
+                    "primary-container": "#1a365d",
+                    "secondary-container": "#a480fe",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#eef1f3",
+                    "outline-variant": "#c4c6cf",
+                    "tertiary-fixed-dim": "#77d6d3",
+                    "secondary-fixed": "#e9ddff",
+                    "inverse-primary": "#adc7f7",
+                    "deep-blue-primary": "#1A365D"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "max-width": "1280px",
+                    "margin-mobile": "16px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Montserrat"
+                    ],
+                    "caption": [
+                            "Inter"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "headline-xl": [
+                            "Montserrat"
+                    ],
+                    "headline-lg": [
+                            "Montserrat"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Montserrat"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "caption": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-xl": [
+                            "40px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "26px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- Schema.org -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Advance Chiropractic Clinic",
+      "medicalSpecialty": [
+        "Chiropractic",
+        "Physiotherapy"
+      ],
+      "url": "https://advancechiropractic.example.com",
+      "logo": "URL_TO_LOGO",
+      "telephone": "084098 01156",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Main Street",
+        "addressLocality": "City",
+        "postalCode": "00000",
+        "addressCountry": "Country"
+      }
+    }
+    </script>
+<!-- TopNavBar Component -->
+<header class="bg-surface-container-lowest border-b border-outline-variant shadow-sm fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-max-width mx-auto">
+<!-- Brand -->
+<div class="flex items-center gap-2">
+<img alt="Advance Chiropractic Clinic Logo" class="h-10 w-10 object-contain rounded-DEFAULT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtgS-fv3pijpw9ee6nxvEShlKcub4__0iF91z0PJpfcH9aUmMnYeDkscOw-_xqFEznN8aRL6fiWPGVDZjWRPi9V-4z3HESBD1JUmrNlNHx3zJkJ18xwBWcQt7DhEo6yN71g_GhKWBxiuET_IyPoznR5nGU6kadZdPvtGULFWHJXZ0pcCmtJ26l-cduWgv940qgvsmKmQ3iWIZo379ix80DNW6qLq2pVLZ8vD_hgphOOhjKpz9ZnUT484Dw-4JfgPU4PApwGi1Iulo"/>
+<span class="font-headline-md text-headline-md font-bold text-deep-blue-primary hidden md:block">Advance Chiropractic</span>
+</div>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant hover:text-healthcare-teal transition-colors duration-200 font-body-md text-body-md" href="#">Symptoms &amp; Conditions</a>
+<a class="text-deep-blue-primary border-b-2 border-healthcare-teal pb-1 font-body-md text-body-md" href="#">Our Services</a>
+<a class="text-on-surface-variant hover:text-healthcare-teal transition-colors duration-200 font-body-md text-body-md" href="#">Therapies</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-healthcare-teal cursor-pointer transition-colors" data-icon="facebook">social_leaderboard</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-healthcare-teal cursor-pointer transition-colors" data-icon="instagram">retweet</span>
+</div>
+<div class="hidden md:flex flex-col items-end mr-4">
+<span class="font-label-md text-label-md text-on-surface-variant">084098 01156</span>
+</div>
+<button class="bg-deep-blue-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-healthcare-teal transition-colors duration-200 scale-95 active:opacity-80 transition-all">
+                    Call Us Now
+                </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-deep-blue-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-20">
+<!-- Hero Section -->
+<section class="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover object-center" data-alt="A brightly lit, modern physiotherapy and chiropractic clinic environment. The room is pristine, featuring advanced medical equipment, a clean white treatment table, and large windows letting in abundant natural light. The color palette is dominated by sterile whites and clinical soft blues, evoking a sense of calm, professionalism, and high-end medical care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDTeXqx0f35UfTOO8qkeLWjHmFN9GHhD_7h70ynMXD7-wHVuQ76FQt4kHbLVe8sVhSIV4NYW84_RcjeyWjrDPBUxYZKCNTN-IA4JwpyOa1WPAs1ZRm8XisPp1Q923mT1Uo3FEXwiLUeqfFMAEt_mgizThASoTbquyE3zRiD79WLgAT86Qvn8KF41pMKmKdGJtAG7U8Cme24-oPbxg_Mhv4tnV9sqYnn9_GfLYGijV0TgtSgjC5D6ZN4x0H81pBTOQwRHPgyUJfA-I"/>
+<!-- Overlay for readability -->
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-3xl">
+<h1 class="font-headline-xl text-headline-xl text-on-primary mb-4 shadow-sm">Our Services Offered</h1>
+<p class="font-body-lg text-body-lg text-inverse-on-surface">Have a glance at the services we provide.</p>
+</div>
+</section>
+<!-- Core Services Grid (Bento Style) -->
+<section class="py-16 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<div class="mb-12 text-center">
+<h2 class="font-headline-lg text-headline-lg text-deep-blue-primary mb-2">Core Services</h2>
+<div class="h-1 w-24 bg-healthcare-teal mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Cardiac Rehab Card (Large) -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden group hover:shadow-lg transition-shadow duration-300 relative min-h-[300px]">
+<img class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500" data-alt="A focused physical therapist assisting an elderly patient with gentle cardiovascular exercises in a well-lit modern clinical setting. The environment feels safe and structured, utilizing a soft blue and pristine white color palette to communicate trust and clinical excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVcS6e6UW6fPRa6aySh5d-qaYcUJPicV78pGmlZ2tDstkOhazMQXFH-X4GrBs1hbmcwZWP1BNCmP081YTem7IibKkWqd8bDJa0QRJ77UQFvCJxM-EBExrrs4tmReTBfXa-KDFu9IHLjZqpwKWQxguP4BGMYjWundeMhA-eM1q063BGVK5BxRJTM8eR0RyMHt2OBRUvBTDQVLex3PbDyNKBvgneWGHoZtgyLRJJwCxpri09oWkFgQWYmXQlxJZU1upMgHWjFkyq3w8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-blue-primary/90 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block bg-soft-blue-accent text-deep-blue-primary px-3 py-1 rounded-full font-label-md text-label-md mb-3">Rehabilitation</span>
+<h3 class="font-headline-md text-headline-md text-on-primary mb-2">Cardiac Rehabilitation</h3>
+<p class="font-body-md text-body-md text-inverse-on-surface max-w-lg">Comprehensive programs designed to improve cardiovascular health following heart events, focusing on safe, monitored recovery.</p>
+</div>
+</div>
+<!-- Tele-Physiotherapy Card -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl border border-outline-variant p-6 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-soft-blue-accent flex items-center justify-center mb-4 text-healthcare-teal">
+<span class="material-symbols-outlined text-3xl" data-icon="videocam">videocam</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-blue-primary mb-3">Tele-Physiotherapy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Expert consultation and guided exercises from the comfort of your home. Secure, effective, and convenient care.</p>
+</div>
+<button class="mt-6 text-healthcare-teal font-label-md text-label-md flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Therapeutic Massage Card -->
+<div class="md:col-span-12 bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden group hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
+<div class="w-full md:w-1/2 min-h-[250px] relative">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up of a professional massage therapist's hands applying pressure to a patient's back. The lighting is soft and ambient, creating a relaxing, therapeutic atmosphere within a clean, modern clinical room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTk4TSD_2FdWzFTV58l2aN_CbFGx4hiNmq0PUDhMTvoXUibJ-QjZzFlEH5F__zH01kIUKxLE1VwDiXihKTLl0Tn2f-3n72u0MutKWFLRT9p0kaki521iMM1RIQ-JJ9KlP5bVBJ8ynga7PapbDjz_Ein-ii82KTd5aywmhRKjpb_jJ5PWwJJYnw8uZ63F4aN8oAPusOuRhlf2iwKChzdroz5a6EVgD9uzgiVBIgXe7cpxxkkEKRXbMBDI07zFhLGkxOkiDUAfwAf2U"/>
+</div>
+<div class="w-full md:w-1/2 p-8 flex flex-col justify-center bg-surface-container-lowest">
+<span class="inline-block w-fit bg-soft-blue-accent text-deep-blue-primary px-3 py-1 rounded-full font-label-md text-label-md mb-3">Recovery</span>
+<h3 class="font-headline-md text-headline-md text-deep-blue-primary mb-4">Therapeutic Massage</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Targeted massage techniques designed to alleviate chronic pain, reduce muscle tension, and complement chiropractic adjustments for holistic healing.</p>
+<button class="w-fit border-2 border-clinical-purple text-clinical-purple px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-clinical-purple hover:text-on-primary transition-colors duration-200">
+                             Book Session
+                         </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-primary w-full mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-max-width mx-auto">
+<!-- Brand Column -->
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md font-bold text-on-primary">Advance Chiropractic</span>
+<p class="font-body-md text-body-md text-on-primary-container max-w-xs">Dedicated to clinical excellence and patient-centric care for your optimal health.</p>
+</div>
+<!-- Links Column -->
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-primary-container hover:text-healthcare-teal transition-colors duration-200 opacity-90 hover:opacity-100" href="#">Symptoms &amp; Conditions</a>
+<a class="font-body-md text-body-md text-on-primary underline opacity-90 hover:opacity-100" href="#">Our Services</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-healthcare-teal transition-colors duration-200 opacity-90 hover:opacity-100" href="#">Therapies</a>
+</div>
+<!-- Legal Column -->
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-primary-container hover:text-healthcare-teal transition-colors duration-200 opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-healthcare-teal transition-colors duration-200 opacity-90 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-healthcare-teal transition-colors duration-200 opacity-90 hover:opacity-100" href="#">Contact Us</a>
+</div>
+</div>
+<!-- Copyright -->
+<div class="border-t border-primary-container">
+<div class="px-margin-mobile md:px-margin-desktop py-6 max-w-max-width mx-auto text-center">
+<p class="font-caption text-caption text-on-primary-container">© 2024 Advance Chiropractic Clinic. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

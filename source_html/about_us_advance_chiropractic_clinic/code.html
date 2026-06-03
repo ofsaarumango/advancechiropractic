@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Dr. Surendra Kumar &amp; Our Clinic | Advance Chiropractic Clinic</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#1a365d",
+                    "on-secondary-fixed-variant": "#522aa7",
+                    "on-error": "#ffffff",
+                    "background": "#f7fafc",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "inverse-surface": "#2d3133",
+                    "primary": "#002045",
+                    "on-tertiary-fixed": "#00201f",
+                    "surface-container-low": "#f1f4f6",
+                    "on-secondary-container": "#39008c",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "soft-blue-accent": "#EBF8FF",
+                    "surface-container": "#ebeef0",
+                    "outline-variant": "#c4c6cf",
+                    "tertiary-container": "#003d3c",
+                    "on-surface": "#181c1e",
+                    "surface-dim": "#d7dadc",
+                    "inverse-primary": "#adc7f7",
+                    "on-secondary-fixed": "#23005c",
+                    "tertiary": "#002625",
+                    "surface-container-high": "#e5e9eb",
+                    "success-green": "#2F855A",
+                    "surface-bright": "#f7fafc",
+                    "on-tertiary-fixed-variant": "#00504e",
+                    "secondary": "#6b46c1",
+                    "healthcare-teal": "#319795",
+                    "on-tertiary-container": "#4cadab",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#001b3c",
+                    "surface": "#f7fafc",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#a480fe",
+                    "primary-fixed": "#d6e3ff",
+                    "surface-tint": "#455f88",
+                    "on-surface-variant": "#43474e",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#74777f",
+                    "on-background": "#181c1e",
+                    "inverse-on-surface": "#eef1f3",
+                    "error-red": "#C53030",
+                    "primary-fixed-dim": "#adc7f7",
+                    "on-primary-container": "#86a0cd",
+                    "secondary-fixed": "#e9ddff",
+                    "tertiary-fixed-dim": "#77d6d3",
+                    "error-container": "#ffdad6",
+                    "clinical-purple": "#6B46C1",
+                    "tertiary-fixed": "#94f2f0",
+                    "error": "#ba1a1a",
+                    "deep-blue-primary": "#1A365D"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "max-width": "1280px",
+                    "margin-mobile": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "caption": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-xl": ["Montserrat"]
+            },
+            "fontSize": {
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["26px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .medical-shadow {
+            box-shadow: 0 4px 20px -2px rgba(26, 54, 93, 0.08);
+        }
+        body {
+            padding-top: 80px; /* Offset for fixed navbar */
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-soft-blue-accent selection:text-deep-blue-primary">
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-surface fixed top-0 w-full z-50 border-b border-outline-variant shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<!-- Brand Logo -->
+<a class="text-headline-md font-headline-md font-bold text-deep-blue-primary flex items-center gap-2 hover:opacity-90 transition-opacity" href="#">
+<span class="material-symbols-outlined text-healthcare-teal" style="font-variation-settings: 'FILL' 1;">acupuncture</span>
+                Advance Chiropractic
+            </a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-deep-blue-primary hover:bg-soft-blue-accent transition-colors duration-200 px-3 py-2 rounded-DEFAULT" href="#">Home</a>
+<!-- Active State Applied Here based on Page Intent -->
+<a class="text-label-md font-label-md text-deep-blue-primary font-bold border-b-2 border-healthcare-teal pb-1 px-3 py-2" href="#">About</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-deep-blue-primary hover:bg-soft-blue-accent transition-colors duration-200 px-3 py-2 rounded-DEFAULT" href="#">Services</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-deep-blue-primary hover:bg-soft-blue-accent transition-colors duration-200 px-3 py-2 rounded-DEFAULT" href="#">Gallery</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-deep-blue-primary hover:bg-soft-blue-accent transition-colors duration-200 px-3 py-2 rounded-DEFAULT" href="#">Contact Us</a>
+</div>
+<!-- Actions -->
+<div class="hidden md:flex items-center gap-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-healthcare-teal">call</span>
+<span class="text-label-md font-label-md font-bold">084098 01156</span>
+</div>
+<button class="bg-deep-blue-primary text-on-primary text-label-md font-label-md px-6 py-3 rounded-lg hover:bg-healthcare-teal transition-colors duration-200 shadow-sm hover:scale-95 active:scale-95 opacity-90 transition-all flex items-center gap-2">
+                    Request An Appointment
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-deep-blue-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="w-full">
+<!-- Hero Section -->
+<section class="w-full bg-soft-blue-accent/30 py-20 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+<div class="max-w-max-width mx-auto flex flex-col items-center text-center">
+<span class="text-label-md font-label-md text-healthcare-teal uppercase tracking-widest mb-4">Advance Chiropractic Clinic</span>
+<h1 class="text-headline-lg-mobile md:text-headline-xl font-headline-xl text-deep-blue-primary mb-6 max-w-3xl">Premium Healthcare Solutions in Patna</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Restoring mobility, alleviating pain, and enhancing your quality of life through expert, evidence-based chiropractic care.
+                </p>
+</div>
+</section>
+<!-- Doctor Profile Section (Asymmetric Layout) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<!-- Image Column -->
+<div class="md:col-span-5 relative">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden shadow-sm relative z-10 border border-outline-variant">
+<img alt="Professional portrait of Dr. Surendra Kumar" class="w-full h-full object-cover" data-alt="A professional, medium-shot portrait of a distinguished male doctor in his 40s wearing a crisp white medical coat over a light blue collared shirt. He is standing in a brightly lit, modern clinical environment with soft, out-of-focus background elements suggesting medical equipment. The lighting is high-key and clean, utilizing a cool corporate color palette dominated by whites and soft blues to convey expertise, clinical calm, and approachability. His expression is confident and reassuring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV9r0zJ2U0iLrereOBi2X3KAgzdaM3CKve27RiJiJNN2nYiqmt5Zz1PzTHn1Wi5WFXhjHJ3fWgO388dKC6V_ze-q_m1f11XTtc959lOuZ7IlF66kUFOpNLK-Wet1YFFTjSl-e9bx3pUc6i_HXCeOgY0M-c98sxxZ7P76SRkSGmr6nFdZRxjKWatmJpKmSJ1qNgbY88f3RuZ3f4URMh7I-1l8BSY3BQEK5xsM9ttFq4dfkMHy4i1ItgnihPRa9KrQeiZMYcvLRr9qs"/>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-soft-blue-accent rounded-full -z-10"></div>
+</div>
+<!-- Text Column -->
+<div class="md:col-span-7 md:pl-12 flex flex-col gap-6">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-deep-blue-primary mb-2">Dr. Surendra Kumar</h2>
+<p class="text-body-lg font-body-lg text-healthcare-teal font-semibold">Lead Chiropractor &amp; Founder</p>
+</div>
+<div class="text-body-md font-body-md text-on-surface-variant space-y-4">
+<p>
+                            Dr. Surendra Kumar brings years of specialized experience in diagnosing and treating neuromuscular disorders, with an emphasis on treatment through manual adjustment and/or manipulation of the spine.
+                        </p>
+<p>
+                            Committed to a patient-centric philosophy, Dr. Kumar believes in treating the root cause of discomfort rather than merely masking symptoms. His approach integrates advanced chiropractic techniques with holistic wellness strategies, ensuring comprehensive care tailored to individual patient needs.
+                        </p>
+</div>
+<!-- Clinical Credentials Chips -->
+<div class="flex flex-wrap gap-3 mt-4">
+<span class="bg-soft-blue-accent text-deep-blue-primary text-label-md font-label-md px-4 py-2 rounded-full border border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                            Certified Specialist
+                        </span>
+<span class="bg-soft-blue-accent text-deep-blue-primary text-label-md font-label-md px-4 py-2 rounded-full border border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">school</span>
+                            Advanced Training
+                        </span>
+<span class="bg-soft-blue-accent text-deep-blue-primary text-label-md font-label-md px-4 py-2 rounded-full border border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+                            10+ Years Experience
+                        </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Clinic Mission & Facility (Bento Grid) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-background border-t border-outline-variant">
+<div class="max-w-max-width mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-headline-lg font-headline-lg text-deep-blue-primary mb-4">Our Clinic in Patna</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">Providing a tranquil, state-of-the-art environment designed for your healing and comfort.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1: Mission -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant medical-shadow hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+<div class="w-12 h-12 bg-soft-blue-accent rounded-lg flex items-center justify-center mb-6 text-healthcare-teal">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">vital_signs</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-deep-blue-primary mb-3">Our Mission</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex-grow">
+                            To deliver premium healthcare solutions that empower our patients to lead pain-free, active lives. We are dedicated to clinical excellence and compassionate care in every interaction.
+                        </p>
+</div>
+<!-- Card 2: Facility (Image Heavy) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden medical-shadow hover:shadow-md transition-shadow duration-300 md:col-span-2 group">
+<div class="h-48 w-full overflow-hidden relative">
+<div class="absolute inset-0 bg-deep-blue-primary/10 group-hover:bg-transparent transition-colors z-10"></div>
+<img alt="Modern clinical treatment room" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="A bright, pristine modern clinical treatment room featuring a professional chiropractic adjustment table in the center. The room is flooded with natural light from large windows, highlighting clean white walls and minimal, sophisticated medical equipment. The color palette is sterile yet calming, incorporating soft grays, whites, and subtle teal accents. The overall aesthetic is highly professional, clean, and organized, representing a premium healthcare facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSQCpk40-JNf5Zhxm0hJwFmXKp-C_WFRJnR0XNDQsKRMROU4XSW9Z18j0C4-6-qEr7uR_BhQiCt3mF1_otgNeomJ1OnO-rmx4Q0zP0f3_7_LPSXrku1aik-C4Yszw9gfTY19bkWy541xFdCezBGtCdGuDESjdbqz7RJajDRm2eVOQ0smpQstY_W3xb5paUkuDgXpPeJRmmgtzkNcEia__PwVxeaMIEWLr0zB8xcJmGdrvVNUxudegMtKmwmhnzyzjSDTx06llSL4M"/>
+</div>
+<div class="p-8">
+<h3 class="text-headline-md font-headline-md text-deep-blue-primary mb-3">State-of-the-Art Facility</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                                Located in the heart of Patna, our clinic is equipped with the latest diagnostic and therapeutic technology. We maintain strict hygiene protocols and a calming atmosphere to ensure your visit is as comfortable as it is effective.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-primary w-full border-t border-primary-fixed-dim/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter py-12 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<!-- Brand & Copyright -->
+<div class="flex flex-col gap-4">
+<span class="text-headline-sm font-headline-md text-on-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-healthcare-teal">acupuncture</span>
+                    Advance Chiropractic
+                </span>
+<p class="text-body-md font-body-md text-on-primary/80">
+                    Premium Healthcare Solutions in Patna. Dedicated to your spinal health and overall well-being.
+                </p>
+<p class="text-caption font-caption text-on-primary/60 mt-auto">
+                    © 2024 Fillip Technologies
+                </p>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-label-md font-label-md text-on-primary mb-4 uppercase tracking-wider opacity-50">Navigation</h4>
+<ul class="flex flex-col gap-3">
+<li><a class="text-body-md font-body-md text-on-primary/80 hover:text-on-primary hover:underline decoration-healthcare-teal underline-offset-4 transition-opacity duration-300 hover:opacity-100" href="#">Home</a></li>
+<li><a class="text-body-md font-body-md text-healthcare-teal font-bold hover:underline decoration-healthcare-teal underline-offset-4 transition-opacity duration-300 hover:opacity-100" href="#">About</a></li>
+<li><a class="text-body-md font-body-md text-on-primary/80 hover:text-on-primary hover:underline decoration-healthcare-teal underline-offset-4 transition-opacity duration-300 hover:opacity-100" href="#">Services</a></li>
+<li><a class="text-body-md font-body-md text-on-primary/80 hover:text-on-primary hover:underline decoration-healthcare-teal underline-offset-4 transition-opacity duration-300 hover:opacity-100" href="#">Gallery</a></li>
+</ul>
+</div>
+<!-- Legal & Support -->
+<div>
+<h4 class="text-label-md font-label-md text-on-primary mb-4 uppercase tracking-wider opacity-50">Legal</h4>
+<ul class="flex flex-col gap-3">
+<li><a class="text-body-md font-body-md text-on-primary/80 hover:text-on-primary hover:underline decoration-healthcare-teal underline-offset-4 transition-opacity duration-300 hover:opacity-100" href="#">Privacy Policy</a></li>
+<li><a class="text-body-md font-body-md text-on-primary/80 hover:text-on-primary hover:underline decoration-healthcare-teal underline-offset-4 transition-opacity duration-300 hover:opacity-100" href="#">Terms of Service</a></li>
+<li><a class="text-body-md font-body-md text-on-primary/80 hover:text-on-primary hover:underline decoration-healthcare-teal underline-offset-4 transition-opacity duration-300 hover:opacity-100" href="#">Contact Us</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h4 class="text-label-md font-label-md text-on-primary mb-4 uppercase tracking-wider opacity-50">Contact</h4>
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-3 text-body-md font-body-md text-on-primary/80">
+<span class="material-symbols-outlined text-healthcare-teal mt-1 text-[20px]">location_on</span>
+<span>Patna, Bihar, India<br/>(Full Address Details Here)</span>
+</li>
+<li class="flex items-center gap-3 text-body-md font-body-md text-on-primary/80">
+<span class="material-symbols-outlined text-healthcare-teal text-[20px]">call</span>
+<span>084098 01156</span>
+</li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>
