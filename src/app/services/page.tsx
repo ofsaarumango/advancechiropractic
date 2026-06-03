@@ -3,8 +3,72 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata = {
-  title: "Expert Chiropractic Services | Advance Chiropractic Clinic",
+  title: "Physiotherapy Services | Advance Chiropractic Clinic",
+  description: "Explore the comprehensive physiotherapy services at Advance Chiropractic Clinic in Patna. We specialize in Cardiac, Musculoskeletal, Vestibular, Neuro, Sports, and Home Care Physiotherapy."
 };
+
+const physiotherapyServices = [
+  {
+    title: "Cardiac Rehabilitation",
+    icon: "favorite",
+    desc: "A customized program of exercise and education designed to help you recover after a heart attack, heart surgery, or other cardiac condition.",
+    color: "text-red-500 bg-red-50"
+  },
+  {
+    title: "Musculoskeletal Physiotherapy",
+    icon: "accessibility_new",
+    desc: "Specialized care for restoring mobility, strength, and function to joints, muscles, ligaments, and tendons.",
+    color: "text-healthcare-teal bg-teal-50"
+  },
+  {
+    title: "Vestibular Rehabilitation",
+    icon: "balance",
+    desc: "Targeted exercise programs to alleviate dizziness, balance problems, and vertigo issues related to the inner ear.",
+    color: "text-indigo-500 bg-indigo-50"
+  },
+  {
+    title: "Pre & Post Surgery Rehabilitation",
+    icon: "medical_services",
+    desc: "Tailored physical therapy to prepare your body for surgery and optimize recovery, restoring full range of motion post-operation.",
+    color: "text-blue-500 bg-blue-50"
+  },
+  {
+    title: "Women's Health Physiotherapy",
+    icon: "female",
+    desc: "Compassionate pelvic floor rehab and support for pre-natal, post-natal, and other gender-specific health conditions.",
+    color: "text-pink-500 bg-pink-50"
+  },
+  {
+    title: "Sports Physiotherapy",
+    icon: "sports_gymnastics",
+    desc: "Focused injury rehabilitation and athletic performance training to help you safely return to sport and prevent future issues.",
+    color: "text-amber-500 bg-amber-50"
+  },
+  {
+    title: "Pediatric Physiotherapy",
+    icon: "child_care",
+    desc: "Gentle, play-based therapeutic exercises to support children's physical development, coordination, and motor skills.",
+    color: "text-green-500 bg-green-50"
+  },
+  {
+    title: "Geriatric Physiotherapy",
+    icon: "elderly",
+    desc: "Focused mobility and strength training to manage arthritis, balance loss, and keep seniors active, safe, and independent.",
+    color: "text-cyan-500 bg-cyan-50"
+  },
+  {
+    title: "Neuro Physiotherapy",
+    icon: "psychology",
+    desc: "Expert rehabilitation for patients recovering from stroke, Parkinson's, Multiple Sclerosis, paralysis, or spinal cord injuries.",
+    color: "text-clinical-purple bg-purple-50"
+  },
+  {
+    title: "Home Care Physiotherapy",
+    icon: "home",
+    desc: "Dedicated professional physiotherapy assessments and treatment programs brought directly to the convenience of your home.",
+    color: "text-emerald-500 bg-emerald-50"
+  }
+];
 
 export default function ServicesPage() {
   return (
@@ -13,113 +77,62 @@ export default function ServicesPage() {
       <section className="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto py-12 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
         <div className="flex flex-col gap-6 pr-0 md:pr-12">
           <span className="text-label-md font-label-md text-healthcare-teal uppercase tracking-widest">Clinical Excellence</span>
-          <h1 className="font-headline-xl text-headline-xl text-deep-blue-primary leading-tight">
-            Targeted Therapies for Optimal Recovery
+          <h1 className="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-deep-blue-primary leading-tight">
+            Targeted Physiotherapy for Active Living
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant">
-            Our evidence-based chiropractic treatments are designed to diagnose, treat, and prevent mechanical disorders of the musculoskeletal system. Experience a clinical approach to pain relief and structural correction.
+            Our evidence-based physiotherapy services are designed to diagnose, treat, and prevent structural and functional disorders of the body. Experience a clinical approach to pain relief, mobility, and recovery.
           </p>
           <div className="pt-4">
-            <Link href="#comprehensive-care">
+            <Link href="#physiotherapy-services">
               <button className="bg-deep-blue-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded hover:bg-healthcare-teal transition-colors duration-300">
-                View Treatment Protocols
+                Explore Services
               </button>
             </Link>
           </div>
         </div>
         <div className="mt-8 md:mt-0 relative rounded-xl overflow-hidden h-[400px] shadow-medical">
           <Image 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnQHLn7BHM5Hajn7QTKas1WnbtaTJ21f1R74W0PpgVqUxASMBuF4jxIMmez2GBGkl3KQ726r5dsRQE09c_nUTTgfcAfTDb4BaKTa2tELuzCTwl7HaF2sm2s-Suf3-WWFtkUfflstdz0WCDOjcz2awrIzlkT73Ef00nBXTZOjecFr43TjWRCRqwVAD_fbiNReusEp7vS00LnkgnwVTCjvOX06F7-pa__shNJzPEur7YTauCUG8jFTIwo2RnTcOeNj7dxxE0vj6QfcY"
-            alt="Modern chiropractic clinic room"
+            src="/images/services-hero.webp"
+            alt="Modern clinic therapy room"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
+            priority={true}
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-deep-blue-primary/10 to-transparent"></div>
         </div>
       </section>
 
-      {/* Bento Grid Services Section */}
-      <section id="comprehensive-care" className="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto py-16">
+      {/* Grid Services Section */}
+      <section id="physiotherapy-services" className="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto py-16">
         <div className="mb-12 text-center max-w-2xl mx-auto">
-          <h2 className="font-headline-lg text-headline-lg text-deep-blue-primary mb-4">Comprehensive Care</h2>
-          <p className="font-body-md text-body-md text-on-surface-variant">Explore our specialized treatment areas. We utilize state-of-the-art diagnostic tools alongside traditional adjustments.</p>
+          <h2 className="font-headline-lg text-headline-lg text-deep-blue-primary mb-4">Our Physiotherapy Services</h2>
+          <p className="font-body-md text-body-md text-on-surface-variant">We provide a comprehensive range of clinical physiotherapy treatments customized to meet your healing and movement goals.</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-          {/* Card 1: Back Pain (Large Featured) */}
-          <div className="md:col-span-8 bg-surface-container-lowest rounded-xl border border-outline-variant p-8 flex flex-col justify-between shadow-medical hover:shadow-medical-hover transition-all duration-300 group">
-            <div className="flex items-start justify-between mb-8">
-              <div className="w-16 h-16 rounded-full bg-soft-blue-accent flex items-center justify-center text-deep-blue-primary group-hover:bg-deep-blue-primary group-hover:text-white transition-colors duration-300">
-                <span className="material-symbols-outlined text-[32px] filled">accessibility_new</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+          {physiotherapyServices.map((service, index) => (
+            <div 
+              key={index} 
+              className="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col justify-between shadow-medical hover:shadow-medical-hover transition-all duration-300 group"
+            >
+              <div>
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-6 shrink-0 text-2xl font-semibold text-deep-blue-primary bg-soft-blue-accent group-hover:bg-deep-blue-primary group-hover:text-white transition-colors duration-300`}>
+                  <span className="material-symbols-outlined text-[24px]">{service.icon}</span>
+                </div>
+                <h3 className="font-headline-md text-[20px] font-bold text-deep-blue-primary mb-3">{service.title}</h3>
+                <p className="font-body-md text-body-md text-on-surface-variant mb-6 text-sm leading-relaxed">
+                  {service.desc}
+                </p>
               </div>
-              <span className="bg-surface-container py-1 px-3 rounded-full text-caption font-caption text-on-surface-variant">Primary Focus</span>
-            </div>
-            <div>
-              <h3 className="font-headline-md text-headline-md text-deep-blue-primary mb-3">Spinal & Lumbar Rehabilitation</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant mb-6 max-w-xl">
-                Comprehensive management of acute and chronic back pain. Utilizing spinal manipulation, mobilization, and targeted soft tissue therapies to restore structural integrity and alleviate nerve compression.
-              </p>
-              <Link href="/contact" className="inline-flex items-center gap-2 font-label-md text-label-md text-clinical-purple hover:text-deep-blue-primary transition-colors">
-                View Back Pain Protocols <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 2: Neck Pain (Small) */}
-          <div className="md:col-span-4 bg-surface-container-lowest rounded-xl border border-outline-variant p-8 flex flex-col justify-between shadow-medical hover:shadow-medical-hover transition-all duration-300">
-            <div className="mb-6">
-              <div className="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-healthcare-teal mb-4">
-                <span className="material-symbols-outlined">airline_seat_recline_normal</span>
+              <div>
+                <Link href="/contact" className="inline-flex items-center gap-2 font-label-md text-label-md text-healthcare-teal hover:text-deep-blue-primary transition-colors">
+                  Book Consult <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </Link>
               </div>
-              <h3 className="font-headline-md text-[20px] font-semibold text-deep-blue-primary mb-2">Cervical Therapy</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant text-sm">
-                Targeted treatments for neck stiffness, whiplash, and tension headaches caused by cervical spine misalignment.
-              </p>
             </div>
-          </div>
-
-          {/* Card 3: Sciatica (Small) */}
-          <div className="md:col-span-4 bg-surface-container-lowest rounded-xl border border-outline-variant p-8 flex flex-col justify-between shadow-medical hover:shadow-medical-hover transition-all duration-300">
-            <div className="mb-6">
-              <div className="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-clinical-purple mb-4">
-                <span className="material-symbols-outlined">electric_bolt</span>
-              </div>
-              <h3 className="font-headline-md text-[20px] font-semibold text-deep-blue-primary mb-2">Sciatica Relief</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant text-sm">
-                Decompression techniques aimed at relieving pressure on the sciatic nerve to eliminate radiating leg pain and numbness.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 4: Sports Injuries (Medium) */}
-          <div className="md:col-span-4 bg-deep-blue-primary rounded-xl p-8 flex flex-col justify-between shadow-medical hover:shadow-lg transition-all duration-300 relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4 opacity-10">
-              <span className="material-symbols-outlined text-[100px] text-white">directions_run</span>
-            </div>
-            <div className="relative z-10 mb-6">
-              <div className="w-12 h-12 rounded bg-white/10 flex items-center justify-center text-white mb-4">
-                <span className="material-symbols-outlined filled">fitness_center</span>
-              </div>
-              <h3 className="font-headline-md text-[20px] font-semibold text-white mb-2">Sports Medicine</h3>
-              <p className="font-body-md text-body-md text-primary-fixed-dim text-sm">
-                Accelerated recovery programs for athletic injuries, focusing on joint mobility, biomechanics, and performance enhancement.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 5: Posture (Small) */}
-          <div className="md:col-span-4 bg-surface-container-lowest rounded-xl border border-outline-variant p-8 flex flex-col justify-between shadow-medical hover:shadow-medical-hover transition-all duration-300">
-            <div className="mb-6">
-              <div className="w-12 h-12 rounded bg-soft-blue-accent flex items-center justify-center text-deep-blue-primary mb-4">
-                <span className="material-symbols-outlined">straighten</span>
-              </div>
-              <h3 className="font-headline-md text-[20px] font-semibold text-deep-blue-primary mb-2">Posture Correction</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant text-sm">
-                Ergonomic assessments and structural adjustments to correct modern sedentary lifestyle impacts like "tech neck".
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -127,9 +140,9 @@ export default function ServicesPage() {
       <section className="bg-soft-blue-accent border-y border-outline-variant/30 mt-12">
         <div className="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto py-16 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="max-w-xl">
-            <h2 className="font-headline-lg text-headline-lg text-deep-blue-primary mb-4">Ready to Address Your Discomfort?</h2>
+            <h2 className="font-headline-lg text-headline-lg text-deep-blue-primary mb-4">Restore Your Movement Today</h2>
             <p className="font-body-md text-body-md text-on-surface-variant">
-              Schedule a comprehensive initial consultation. Our clinical team will perform a full structural assessment and design a personalized treatment protocol.
+              Schedule a comprehensive initial assessment. Our team will design a personalized recovery plan tailored to your condition.
             </p>
           </div>
           <div className="flex-shrink-0">

@@ -49,7 +49,7 @@ export default function SymptomsAccordion() {
           </p>
           <div className="pt-4 relative h-64 w-full rounded-2xl shadow-sm border border-outline-variant/20 overflow-hidden">
             <Image 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnmU4zHYm7yBOMTp8tVOscsz_VaTgiQKZOMILjB0l87tbosUqEi6tu9dMIEVJrIq7RfP48SsjBSqGomz7OS4VThaKC9MrL73kDA3beC7wqD75wSOo8W3sfVmACrDAGJFfaC-xdZmA8f7LUyfBzKiyq0xQwlkFQEwEukBDTT9kzuL-ezNwnrDqb7SacLzCPyNeZrGdfYifF86PqshCZS9PAIAG4xEIEtF3heGetOyH9ruVjNOCd0Uw5DJxRG1D7fMRn_c2wk4aBGGo" 
+              src="/images/spine-model.webp" 
               alt="Anatomical spine model" 
               fill
               className="object-cover"

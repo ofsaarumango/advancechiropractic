@@ -3,6 +3,8 @@
 @plugin "tailwindcss-animate";
 
 @theme {
+  --font-inter: "Inter", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
   --color-primary-container: #1a365d;
   --color-on-secondary-fixed-variant: #522aa7;
   --color-on-error: #ffffff;

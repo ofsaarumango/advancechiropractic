@@ -15,8 +15,7 @@ export default function Hero() {
             Best Chiropractic Clinic in Patna
           </div>
           <h1 className="text-headline-xl font-headline-xl text-deep-blue-primary leading-tight">
-            CHIROPRACTIC <br />
-            <span className="text-healthcare-teal">CARE & CURE</span>
+            Advance Chiropractic Clinic
           </h1>
           <p className="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
             Experience comprehensive healing and pain relief through expert chiropractic treatments led by <strong className="text-deep-blue-primary">Dr. Surendra Kumar</strong>. We focus on restoring your body&apos;s natural alignment and function.
@@ -38,11 +37,12 @@ export default function Hero() {
         <div className="relative z-10 hidden md:block">
           <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-medical relative">
             <Image 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6bcG6csUzU5JRXySUneTaxByclt1SelUTkla_QLmv4aZqDZ345v1BsQdYuzCEJZKBAQp_dJDC2a9utf7JnVym-BmulXu7h0zMtHXgjgSwWZNK5A8oVHZNxzMRJNneYEvn6ReCRLiHvEoqt-7p2DvDiz4aV8C_kmOiUbhNCUR9NQ6i10FtTwYvdn8h818iv-rTHKn_pxsr1ldSpyhGgQt0mEUmrnrx2HKSiCGHWXMN-KwpMN8bD2fx1_uigNu7v-kJcVtsD2aNrE4" 
+              src="/images/hero-patient.webp" 
               alt="Chiropractor treating patient" 
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
+              priority={true}
             />
             {/* Decorative element */}
             <div className="absolute -bottom-6 -left-6 bg-surface-container-lowest p-6 rounded-xl shadow-medical border border-outline-variant/20 flex items-center gap-4">

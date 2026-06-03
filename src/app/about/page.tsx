@@ -26,7 +26,7 @@ export default function AboutPage() {
           <div className="md:col-span-5 relative">
             <div className="w-full aspect-[3/4] rounded-xl overflow-hidden shadow-sm relative z-10 border border-outline-variant">
               <Image 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV9r0zJ2U0iLrereOBi2X3KAgzdaM3CKve27RiJiJNN2nYiqmt5Zz1PzTHn1Wi5WFXhjHJ3fWgO388dKC6V_ze-q_m1f11XTtc959lOuZ7IlF66kUFOpNLK-Wet1YFFTjSl-e9bx3pUc6i_HXCeOgY0M-c98sxxZ7P76SRkSGmr6nFdZRxjKWatmJpKmSJ1qNgbY88f3RuZ3f4URMh7I-1l8BSY3BQEK5xsM9ttFq4dfkMHy4i1ItgnihPRa9KrQeiZMYcvLRr9qs"
+                src="/images/doctor-profile.webp"
                 alt="Professional portrait of Dr. Surendra Kumar"
                 fill
                 className="object-cover"
@@ -93,7 +93,7 @@ export default function AboutPage() {
               <div className="h-48 w-full overflow-hidden relative">
                 <div className="absolute inset-0 bg-deep-blue-primary/10 group-hover:bg-transparent transition-colors z-10"></div>
                 <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSQCpk40-JNf5Zhxm0hJwFmXKp-C_WFRJnR0XNDQsKRMROU4XSW9Z18j0C4-6-qEr7uR_BhQiCt3mF1_otgNeomJ1OnO-rmx4Q0zP0f3_7_LPSXrku1aik-C4Yszw9gfTY19bkWy541xFdCezBGtCdGuDESjdbqz7RJajDRm2eVOQ0smpQstY_W3xb5paUkuDgXpPeJRmmgtzkNcEia__PwVxeaMIEWLr0zB8xcJmGdrvVNUxudegMtKmwmhnzyzjSDTx06llSL4M" 
+                  src="/images/clinic-treatment-room.webp" 
                   alt="Modern clinical treatment room" 
                   fill
                   className="object-cover transform group-hover:scale-105 transition-transform duration-700"
