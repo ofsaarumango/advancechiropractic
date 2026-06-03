@@ -23,13 +23,13 @@ const testimonials = [
 
 const otherPatients = ["Ashutosh Kumar", "Abha Devi", "Smriti Devi"];
 
-export default function Testimonials() {
+export default function Testimonials({ dict, lang }: { dict?: any, lang?: string }) {
   return (
     <section className="py-20 md:py-32 bg-background">
       <div className="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <h2 className="text-headline-lg font-headline-lg text-deep-blue-primary">Our Valuable Clients</h2>
-          <p className="text-body-lg font-body-lg text-on-surface-variant">Hear from our patients in Patna who have reclaimed their active lives through our dedicated care.</p>
+          <h2 className="text-headline-lg font-headline-lg text-deep-blue-primary">{dict?.testimonials?.title || "Our Valuable Clients"}</h2>
+          <p className="text-body-lg font-body-lg text-on-surface-variant">{dict?.testimonials?.desc || "Hear from our patients in Patna who have reclaimed their active lives through our dedicated care."}</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -56,7 +56,7 @@ export default function Testimonials() {
                 </div>
                 <div>
                   <p className="text-label-md font-label-md text-deep-blue-primary">{testimonial.name}</p>
-                  <p className="text-caption font-caption text-on-surface-variant">Patient</p>
+                  <p className="text-caption font-caption text-on-surface-variant">{dict?.testimonials?.patient || "Patient"}</p>
                 </div>
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function Testimonials() {
         </div>
         
         <div className="mt-12 text-center">
-          <p className="text-caption font-caption text-on-surface-variant mb-4 uppercase tracking-widest">Also Trusted By</p>
+          <p className="text-caption font-caption text-on-surface-variant mb-4 uppercase tracking-widest">{dict?.testimonials?.trustedBy || "Also Trusted By"}</p>
           <div className="flex flex-wrap justify-center gap-3">
             {otherPatients.map((patient, idx) => (
               <span key={idx} className="px-4 py-2 bg-surface-container-low rounded-full text-label-md font-label-md text-deep-blue-primary border border-outline-variant/20">

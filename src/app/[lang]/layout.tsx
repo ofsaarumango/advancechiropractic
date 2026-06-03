@@ -1,21 +1,30 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 import TopNavBar from "@/components/layout/TopNavBar";
 import Footer from "@/components/layout/Footer";
+import { getDictionary } from "@/get-dictionary";
+import { Locale, i18n } from "@/i18n-config";
 
 export const metadata: Metadata = {
   title: "Advance Chiropractic Clinic | Best Chiropractic Clinic in Patna",
   description: "Experience expert chiropractic care and cure at Advance Chiropractic Clinic in Patna, led by Dr. Surendra Kumar. Specializing in back pain, neck pain, sciatica, and more.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
+export default async function RootLayout(props: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ lang: string }>;
+}) {
+  const params = await props.params;
+  const lang = params.lang as Locale;
+  const dict = await getDictionary(lang);
+
   return (
     <html
-      lang="en"
+      lang={lang}
       className="scroll-smooth antialiased bg-background text-on-surface"
       data-scroll-behavior="smooth"
     >
@@ -25,11 +34,11 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body-md pt-20 lg:pt-[117px] min-h-screen flex flex-col">
-        <TopNavBar />
+        <TopNavBar dict={dict} lang={lang} />
         <main className="flex-1">
-          {children}
+          {props.children}
         </main>
-        <Footer />
+        <Footer dict={dict} />
         {/* Floating WhatsApp Button */}
         <a
           href="https://wa.me/918409801156"

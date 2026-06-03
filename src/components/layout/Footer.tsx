@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 
-export default function Footer() {
+export default function Footer({ dict }: { dict?: any }) {
   return (
     <footer className="bg-primary w-full border-t border-primary-fixed-dim/20 transition-opacity duration-300 hover:opacity-100">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter py-12 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
@@ -12,11 +12,11 @@ export default function Footer() {
               <Image src="/logo.png" alt="Advance Chiropractic Logo" width={40} height={40} className="object-contain w-full h-full" />
             </div>
             <span className="text-base sm:text-headline-md font-headline-md text-on-primary transition-all duration-200">
-              Advance Chiropractic Clinic
+              {dict?.hero?.title || "Advance Chiropractic Clinic"}
             </span>
           </Link>
           <p className="text-body-md font-body-md text-on-primary/80">
-            Providing expert chiropractic care and holistic healing solutions in Patna. Restore your body's natural balance.
+            {dict?.footer?.desc || "Providing expert chiropractic care and holistic healing solutions in Patna. Restore your body's natural balance."}
           </p>
           <div className="flex gap-4 pt-2 text-on-primary/80">
             <a 
@@ -56,49 +56,49 @@ export default function Footer() {
         </div>
         
         <div className="col-span-1">
-          <h4 className="text-headline-md font-headline-md text-on-primary mb-6">Quick Links</h4>
+          <h4 className="text-headline-md font-headline-md text-on-primary mb-6">{dict?.footer?.quickLinks || "Quick Links"}</h4>
           <nav aria-label="Footer Navigation" className="flex flex-col gap-3">
             <Link href="/" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
-              Home
+              {dict?.nav?.home || "Home"}
             </Link>
             <Link href="/about" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
-              About
+              {dict?.nav?.about || "About"}
             </Link>
             <Link href="/services" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
-              Services
+              {dict?.nav?.services || "Services"}
             </Link>
             <Link href="/gallery" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
-              Gallery
+              {dict?.nav?.gallery || "Gallery"}
             </Link>
           </nav>
         </div>
 
         <div className="col-span-1">
-          <h4 className="text-headline-md font-headline-md text-on-primary mb-6">Support</h4>
+          <h4 className="text-headline-md font-headline-md text-on-primary mb-6">{dict?.footer?.support || "Support"}</h4>
           <nav aria-label="Support Navigation" className="flex flex-col gap-3">
             <Link href="/contact" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
-              Contact Us
+              {dict?.footer?.contact || "Contact Us"}
             </Link>
             <Link href="/privacy" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
-              Privacy Policy
+              {dict?.footer?.privacy || "Privacy Policy"}
             </Link>
             <Link href="/terms" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
-              Terms of Service
+              {dict?.footer?.terms || "Terms of Service"}
             </Link>
           </nav>
         </div>
 
         <div className="col-span-1">
-          <h4 className="text-headline-md font-headline-md text-on-primary mb-6">Contact</h4>
+          <h4 className="text-headline-md font-headline-md text-on-primary mb-6">{dict?.footer?.contact || "Contact"}</h4>
           <div className="space-y-4 text-on-primary/80 text-body-md font-body-md">
             <a 
-              href="https://www.google.com/maps/search/?api=1&query=Advance+Chiropractic+clinic,+Bombay+dyeing+building,+Kankarbagh+Colony+More,+Mithapur,+Patna,+Bihar+800001" 
+              href="https://www.google.com/maps/search/?api=1&query=Advance+Chiropractic+clinic,+Bombay+dyeing+building,+Kankarbagh+Colony+More,+Ghrounda,+Patna,+Bihar+800001" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-start gap-3 hover:text-on-primary transition-colors group"
             >
               <span aria-hidden="true" className="material-symbols-outlined text-healthcare-teal">location_on</span>
-              <span>Advance Chiropractic Clinic,<br />Bombay Dyeing Building, Kankarbagh Colony More,<br />Mithapur, Patna, Bihar - 800001</span>
+              <span>{dict?.hero?.title || "Advance Chiropractic Clinic"},<br />Bombay Dyeing Building, Kankarbagh Colony More,<br />Ghrounda, Patna, Bihar - 800001</span>
             </a>
             <a 
               href="tel:+918409801156" 
@@ -109,7 +109,7 @@ export default function Footer() {
             </a>
             <div className="flex items-center gap-3">
               <span aria-hidden="true" className="material-symbols-outlined text-healthcare-teal">schedule</span>
-              <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+              <span>{dict?.footer?.hours || "Mon - Sat: 9:00 AM - 7:00 PM"}</span>
             </div>
           </div>
         </div>
@@ -117,7 +117,7 @@ export default function Footer() {
       
       <div className="border-t border-primary-fixed-dim/20 py-6 text-center">
         <p className="text-caption font-caption text-on-primary/60">
-          © {new Date().getFullYear()} Advance Chiropractic Clinic. All rights reserved.
+          © {new Date().getFullYear()} {dict?.footer?.rights || "Advance Chiropractic Clinic. All rights reserved."}
         </p>
       </div>
     </footer>

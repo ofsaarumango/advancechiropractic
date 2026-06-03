@@ -1,23 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import React, { useState } from "react";
 
-export default function TopNavBar() {
+export default function TopNavBar({ dict, lang }: { dict: any, lang: string }) {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+
+  const getPath = (path: string) => {
+    if (path === "/") return `/${lang}`;
+    return `/${lang}${path}`;
+  };
 
   const isActive = (path: string, isDropdownParent: boolean = false) => {
+    const fullPath = getPath(path);
     if (path === "/") {
-      return pathname === "/";
+      return pathname === `/${lang}` || pathname === `/${lang}/`;
     }
     if (isDropdownParent) {
-      return pathname === "/services" || pathname === "/therapy" || pathname === "/symptoms";
+      return pathname.startsWith(`/${lang}/services`) || pathname.startsWith(`/${lang}/therapy`) || pathname.startsWith(`/${lang}/symptoms`);
     }
-    return pathname === path || pathname.startsWith(`${path}/`);
+    return pathname === fullPath || pathname.startsWith(`${fullPath}/`);
   };
 
   const getLinkClass = (path: string, isDropdownParent: boolean = false) => {
@@ -39,6 +47,13 @@ export default function TopNavBar() {
     }`;
   };
 
+  const switchLanguage = (newLang: string) => {
+    setIsLangMenuOpen(false);
+    document.cookie = `NEXT_LOCALE=${newLang}; path=/; max-age=31536000`;
+    const currentPath = pathname.replace(/^\/(en|hi)/, '') || '/';
+    window.location.href = `/${newLang}${currentPath}`;
+  };
+
   return (
     <header className="fixed top-0 w-full z-50 shadow-sm border-b border-outline-variant/30 bg-surface transition-colors duration-200">
       {/* Top Utility Bar - Desktop Only */}
@@ -51,16 +66,16 @@ export default function TopNavBar() {
             </a>
             <div className="flex items-center gap-2">
               <span aria-hidden="true" className="material-symbols-outlined text-[16px] text-healthcare-teal">schedule</span>
-              <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+              <span>{dict?.footer?.hours || "Mon - Sat: 9:00 AM - 7:00 PM"}</span>
             </div>
             <a 
-              href="https://www.google.com/maps/search/?api=1&query=Advance+Chiropractic+clinic,+Bombay+dyeing+building,+Kankarbagh+Colony+More,+Mithapur,+Patna,+Bihar+800001" 
+              href="https://www.google.com/maps/search/?api=1&query=Advance+Chiropractic+clinic,+Bombay+dyeing+building,+Kankarbagh+Colony+More,+Ghrounda,+Patna,+Bihar+800001" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center gap-2 hover:text-healthcare-teal transition-colors"
             >
               <span aria-hidden="true" className="material-symbols-outlined text-[16px] text-healthcare-teal">location_on</span>
-              <span>Bombay Dyeing Bldg, Mithapur, Patna</span>
+              <span>Bombay Dyeing Bldg, Ghrounda, Patna</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
@@ -104,7 +119,7 @@ export default function TopNavBar() {
 
       {/* Main Navigation Bar */}
       <div className="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto flex justify-between items-center h-20">
-        <Link href="/" className="flex items-center gap-3 group shrink-0">
+        <Link href={getPath("/")} className="flex items-center gap-3 group shrink-0">
           <Image 
             src="/logo.png" 
             alt="Advance Chiropractic Logo" 
@@ -124,74 +139,112 @@ export default function TopNavBar() {
         
         {/* Desktop Navigation */}
         <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-6 lg:gap-8">
-          <Link href="/" className={getLinkClass("/")}>
-            Home
+          <Link href={getPath("/")} className={getLinkClass("/")}>
+            {dict?.nav?.home || "Home"}
           </Link>
-          <Link href="/about" className={getLinkClass("/about")}>
-            About
+          <Link href={getPath("/about")} className={getLinkClass("/about")}>
+            {dict?.nav?.about || "About"}
           </Link>
           
           {/* Services Dropdown */}
           <div className="relative group py-2">
             <button className={`flex items-center gap-1 cursor-pointer focus:outline-none ${isActive("/services", true) ? "text-deep-blue-primary font-bold border-b-2 border-healthcare-teal pb-1" : "text-on-surface-variant hover:text-deep-blue-primary"}`}>
-              <span className="text-label-md font-semibold">Services</span>
+              <span className="text-label-md font-semibold">{dict?.nav?.services || "Services"}</span>
               <span className="material-symbols-outlined text-sm transition-transform duration-200 group-hover:rotate-180">
                 expand_more
               </span>
             </button>
             
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-56 bg-surface border border-outline-variant/50 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 flex flex-col py-2">
-              <Link href="/services" className="px-4 py-2.5 text-label-md font-medium text-on-surface hover:bg-soft-blue-accent hover:text-deep-blue-primary transition-colors">
-                Service
+              <Link href={getPath("/services")} className="px-4 py-2.5 text-label-md font-medium text-on-surface hover:bg-soft-blue-accent hover:text-deep-blue-primary transition-colors">
+                {dict?.nav?.services || "Services"}
               </Link>
-              <Link href="/therapy" className="px-4 py-2.5 text-label-md font-medium text-on-surface hover:bg-soft-blue-accent hover:text-deep-blue-primary transition-colors">
-                Therapy
+              <Link href={getPath("/therapy")} className="px-4 py-2.5 text-label-md font-medium text-on-surface hover:bg-soft-blue-accent hover:text-deep-blue-primary transition-colors">
+                {dict?.nav?.therapy || "Therapy"}
               </Link>
-              <Link href="/symptoms" className="px-4 py-2.5 text-label-md font-medium text-on-surface hover:bg-soft-blue-accent hover:text-deep-blue-primary transition-colors">
-                Symptoms and Condition
+              <Link href={getPath("/symptoms")} className="px-4 py-2.5 text-label-md font-medium text-on-surface hover:bg-soft-blue-accent hover:text-deep-blue-primary transition-colors">
+                {dict?.nav?.symptoms || "Symptoms and Condition"}
               </Link>
             </div>
           </div>
 
-          <Link href="/gallery" className={getLinkClass("/gallery")}>
-            Gallery
+          <Link href={getPath("/gallery")} className={getLinkClass("/gallery")}>
+            {dict?.nav?.gallery || "Gallery"}
           </Link>
-          <Link href="/contact" className={getLinkClass("/contact")}>
-            Contact Us
+          <Link href={getPath("/contact")} className={getLinkClass("/contact")}>
+            {dict?.nav?.contact || "Contact Us"}
           </Link>
         </nav>
 
-        {/* Right side appointment button */}
+        {/* Right side controls */}
         <div className="hidden md:flex items-center gap-4 shrink-0">
-          <Link href="/contact">
+          
+          {/* Language Switcher */}
+          <div className="relative">
+            <button 
+              onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+              className="flex items-center gap-1 text-deep-blue-primary hover:text-healthcare-teal text-label-md font-semibold transition-colors px-2 py-1 rounded-md hover:bg-soft-blue-accent"
+            >
+              <span className="material-symbols-outlined text-[18px]">language</span>
+              {lang.toUpperCase()}
+            </button>
+            
+            {isLangMenuOpen && (
+              <div className="absolute top-full right-0 mt-2 w-24 bg-surface border border-outline-variant/50 rounded-lg shadow-xl z-50 flex flex-col py-2 overflow-hidden">
+                <button 
+                  onClick={() => switchLanguage('en')}
+                  className={`px-4 py-2 text-label-md font-medium text-left hover:bg-soft-blue-accent transition-colors ${lang === 'en' ? 'text-healthcare-teal font-bold' : 'text-on-surface'}`}
+                >
+                  English
+                </button>
+                <button 
+                  onClick={() => switchLanguage('hi')}
+                  className={`px-4 py-2 text-label-md font-medium text-left hover:bg-soft-blue-accent transition-colors ${lang === 'hi' ? 'text-healthcare-teal font-bold' : 'text-on-surface'}`}
+                >
+                  हिंदी
+                </button>
+              </div>
+            )}
+          </div>
+
+          <Link href={getPath("/contact")}>
             <button className="bg-deep-blue-primary hover:bg-healthcare-teal text-white text-label-md font-bold px-5 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 border border-transparent active:scale-95 cursor-pointer">
               <span aria-hidden="true" className="material-symbols-outlined text-sm">calendar_month</span>
-              Request Appointment
+              {dict?.hero?.requestApt || "Request Appointment"}
             </button>
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button 
-          aria-label="Toggle Menu" 
-          className="md:hidden p-2 text-deep-blue-primary focus:outline-none hover:bg-soft-blue-accent rounded-full transition-colors"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <span aria-hidden="true" className="material-symbols-outlined text-3xl">
-            {isMobileMenuOpen ? "close" : "menu"}
-          </span>
-        </button>
+        {/* Mobile Menu Toggle & Lang (Mobile) */}
+        <div className="flex md:hidden items-center gap-3">
+          <button 
+            onClick={() => switchLanguage(lang === 'en' ? 'hi' : 'en')}
+            className="flex items-center gap-1 text-deep-blue-primary text-label-md font-bold"
+          >
+            <span className="material-symbols-outlined text-[18px]">language</span>
+            {lang === 'en' ? 'HI' : 'EN'}
+          </button>
+          <button 
+            aria-label="Toggle Menu" 
+            className="p-2 text-deep-blue-primary focus:outline-none hover:bg-soft-blue-accent rounded-full transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span aria-hidden="true" className="material-symbols-outlined text-3xl">
+              {isMobileMenuOpen ? "close" : "menu"}
+            </span>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-20 left-0 w-full bg-surface border-b border-outline-variant shadow-lg max-h-[calc(100vh-5rem)] overflow-y-auto z-40">
           <nav className="flex flex-col p-4 gap-2">
-            <Link href="/" className={mobileLinkClass("/")} onClick={() => setIsMobileMenuOpen(false)}>
-              Home
+            <Link href={getPath("/")} className={mobileLinkClass("/")} onClick={() => setIsMobileMenuOpen(false)}>
+              {dict?.nav?.home || "Home"}
             </Link>
-            <Link href="/about" className={mobileLinkClass("/about")} onClick={() => setIsMobileMenuOpen(false)}>
-              About
+            <Link href={getPath("/about")} className={mobileLinkClass("/about")} onClick={() => setIsMobileMenuOpen(false)}>
+              {dict?.nav?.about || "About"}
             </Link>
             
             {/* Mobile Services Dropdown */}
@@ -200,7 +253,7 @@ export default function TopNavBar() {
                 className={`w-full flex justify-between items-center ${mobileLinkClass("/services", true)}`}
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
               >
-                Services
+                {dict?.nav?.services || "Services"}
                 <span className={`material-symbols-outlined transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`}>
                   expand_more
                 </span>
@@ -208,24 +261,24 @@ export default function TopNavBar() {
               
               {isServicesOpen && (
                 <div className="flex flex-col pl-4 mt-2 gap-1 border-l-2 border-outline-variant ml-4">
-                  <Link href="/services" className="block px-4 py-2 text-label-md text-on-surface-variant hover:text-deep-blue-primary rounded-md hover:bg-soft-blue-accent" onClick={() => setIsMobileMenuOpen(false)}>
-                    Service
+                  <Link href={getPath("/services")} className="block px-4 py-2 text-label-md text-on-surface-variant hover:text-deep-blue-primary rounded-md hover:bg-soft-blue-accent" onClick={() => setIsMobileMenuOpen(false)}>
+                    {dict?.nav?.services || "Services"}
                   </Link>
-                  <Link href="/therapy" className="block px-4 py-2 text-label-md text-on-surface-variant hover:text-deep-blue-primary rounded-md hover:bg-soft-blue-accent" onClick={() => setIsMobileMenuOpen(false)}>
-                    Therapy
+                  <Link href={getPath("/therapy")} className="block px-4 py-2 text-label-md text-on-surface-variant hover:text-deep-blue-primary rounded-md hover:bg-soft-blue-accent" onClick={() => setIsMobileMenuOpen(false)}>
+                    {dict?.nav?.therapy || "Therapy"}
                   </Link>
-                  <Link href="/symptoms" className="block px-4 py-2 text-label-md text-on-surface-variant hover:text-deep-blue-primary rounded-md hover:bg-soft-blue-accent" onClick={() => setIsMobileMenuOpen(false)}>
-                    Symptoms and Condition
+                  <Link href={getPath("/symptoms")} className="block px-4 py-2 text-label-md text-on-surface-variant hover:text-deep-blue-primary rounded-md hover:bg-soft-blue-accent" onClick={() => setIsMobileMenuOpen(false)}>
+                    {dict?.nav?.symptoms || "Symptoms and Condition"}
                   </Link>
                 </div>
               )}
             </div>
 
-            <Link href="/gallery" className={mobileLinkClass("/gallery")} onClick={() => setIsMobileMenuOpen(false)}>
-              Gallery
+            <Link href={getPath("/gallery")} className={mobileLinkClass("/gallery")} onClick={() => setIsMobileMenuOpen(false)}>
+              {dict?.nav?.gallery || "Gallery"}
             </Link>
-            <Link href="/contact" className={mobileLinkClass("/contact")} onClick={() => setIsMobileMenuOpen(false)}>
-              Contact Us
+            <Link href={getPath("/contact")} className={mobileLinkClass("/contact")} onClick={() => setIsMobileMenuOpen(false)}>
+              {dict?.nav?.contact || "Contact Us"}
             </Link>
             
             <div className="mt-4 pt-4 border-t border-outline-variant flex flex-col gap-4">
@@ -233,10 +286,10 @@ export default function TopNavBar() {
                 <span aria-hidden="true" className="material-symbols-outlined text-healthcare-teal">call</span>
                 <span className="font-bold">+91 84098 01156</span>
               </a>
-              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href={getPath("/contact")} onClick={() => setIsMobileMenuOpen(false)}>
                 <button className="w-full bg-deep-blue-primary text-white py-3 rounded-lg flex items-center justify-center gap-2 shadow-md">
                   <span aria-hidden="true" className="material-symbols-outlined text-sm">calendar_month</span>
-                  Request Appointment
+                  {dict?.hero?.requestApt || "Request Appointment"}
                 </button>
               </Link>
             </div>

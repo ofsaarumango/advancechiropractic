@@ -1,0 +1,291 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "therapy": "Therapy",
+    "symptoms": "Symptoms and Condition"
+  },
+  "footer": {
+    "desc": "Providing expert chiropractic care and holistic healing solutions in Patna. Restore your body's natural balance.",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "Advance Chiropractic Clinic. All rights reserved.",
+    "hours": "Mon - Sat: 9:00 AM - 7:00 PM"
+  },
+  "hero": {
+    "badge": "Best Chiropractic Clinic in Patna",
+    "title": "Advance Chiropractic Clinic",
+    "desc": "Experience comprehensive healing and pain relief through expert chiropractic treatments led by",
+    "descDoctor": "Dr. Surendra Kumar",
+    "descEnd": ". We focus on restoring your body's natural alignment and function.",
+    "requestApt": "Request An Appointment",
+    "viewServices": "View Services",
+    "experience": "10+ Years",
+    "clinical": "Clinical Experience"
+  },
+  "treatments": {
+    "title": "Specialized Treatments",
+    "desc": "We offer targeted therapies for various musculoskeletal conditions to help you return to a pain-free life.",
+    "items": [
+      {
+        "title": "Back Pain"
+      },
+      {
+        "title": "Neck Pain"
+      },
+      {
+        "title": "Knee Pain"
+      },
+      {
+        "title": "Sciatica Pain"
+      },
+      {
+        "title": "Slip Disc"
+      },
+      {
+        "title": "Joint Pain"
+      },
+      {
+        "title": "Kinesio Taping"
+      },
+      {
+        "title": "Headache"
+      },
+      {
+        "title": "Tingling & Dizziness"
+      },
+      {
+        "title": "Frozen Shoulder"
+      },
+      {
+        "title": "Cupping Therapy"
+      },
+      {
+        "title": "Dry Needling"
+      }
+    ]
+  },
+  "symptomsAccordion": {
+    "badge": "Understanding Your Pain",
+    "title": "Common Symptoms We Treat",
+    "desc": "Identifying your symptoms accurately is the first step towards a targeted cure. If you experience any of these, specialized chiropractic intervention can help.",
+    "items": [
+      {
+        "title": "Back Pain",
+        "desc": "Often presents as a shooting, searing, or stabbing pain. The discomfort typically worsens with bending, lifting, standing, or walking."
+      },
+      {
+        "title": "Neck Pain",
+        "desc": "Characterized by general stiffness, severe muscle spasms, reduced range of movement, and often accompanied by tension headaches."
+      },
+      {
+        "title": "Knee Pain",
+        "desc": "Symptoms include localized stiffness, visible swelling, a feeling of instability or giving way, and sometimes popping or crunching noises."
+      },
+      {
+        "title": "Sciatica",
+        "desc": "Distinctive discomfort radiating from the lower back down through the leg. Pain can vary widely from a mild ache to a sharp, burning sensation or excruciating electric shock."
+      },
+      {
+        "title": "Slipped Disc",
+        "desc": "Frequently causes numbness, noticeable weakness in the affected area, and persistent tingling or burning sensations radiating along nerve paths."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Our Valuable Clients",
+    "desc": "Hear from our patients in Patna who have reclaimed their active lives through our dedicated care.",
+    "patient": "Patient",
+    "trustedBy": "Also Trusted By"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "desc": "We're here to help you on your journey to optimal health. Reach out to schedule an appointment or ask any questions about our chiropractic care.",
+    "sendMessage": "Send a Message",
+    "clinicInfo": "Clinic Information",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "location": "Location",
+    "viewMap": "View on Maps",
+    "connect": "Connect With Us",
+    "firstName": "First Name *",
+    "lastName": "Last Name *",
+    "help": "How can we help you?",
+    "submitWa": "Submit Request via WhatsApp"
+  },
+  "about": {
+    "title": "Premium Healthcare Solutions in Patna",
+    "subtitle": "Advance Chiropractic Clinic",
+    "desc": "Restoring mobility, alleviating pain, and enhancing your quality of life through expert, evidence-based chiropractic care.",
+    "doctorTitle": "Lead Chiropractor & Founder",
+    "doctorDesc1": "Dr. Surendra Kumar brings years of specialized experience in diagnosing and treating neuromuscular disorders, with an emphasis on treatment through manual adjustment and/or manipulation of the spine.",
+    "doctorDesc2": "Committed to a patient-centric philosophy, Dr. Kumar believes in treating the root cause of discomfort rather than merely masking symptoms. His approach integrates advanced chiropractic techniques with holistic wellness strategies, ensuring comprehensive care tailored to individual patient needs.",
+    "cert1": "Certified Specialist",
+    "cert2": "Advanced Training",
+    "cert3": "10+ Years Experience",
+    "missionTitle": "Our Clinic in Patna",
+    "missionSubtitle": "Providing a tranquil, state-of-the-art environment designed for your healing and comfort.",
+    "ourMission": "Our Mission",
+    "missionDesc": "To deliver premium healthcare solutions that empower our patients to lead pain-free, active lives. We are dedicated to clinical excellence and compassionate care in every interaction.",
+    "facility": "State-of-the-Art Facility",
+    "facilityDesc": "Located in the heart of Patna, our clinic is equipped with the latest diagnostic and therapeutic technology. We maintain strict hygiene protocols and a calming atmosphere to ensure your visit is as comfortable as it is effective."
+  },
+  "services": {
+    "title": "Targeted Physiotherapy for Active Living",
+    "badge": "Clinical Excellence",
+    "desc": "Our evidence-based physiotherapy services are designed to diagnose, treat, and prevent structural and functional disorders of the body. Experience a clinical approach to pain relief, mobility, and recovery.",
+    "explore": "Explore Services",
+    "sectionTitle": "Our Physiotherapy Services",
+    "sectionDesc": "We provide a comprehensive range of clinical physiotherapy treatments customized to meet your healing and movement goals.",
+    "book": "Book Consult",
+    "ctaTitle": "Restore Your Movement Today",
+    "ctaDesc": "Schedule a comprehensive initial assessment. Our team will design a personalized recovery plan tailored to your condition.",
+    "items": [
+      {
+        "title": "Cardiac Rehabilitation",
+        "desc": "A customized program of exercise and education designed to help you recover after a heart attack, heart surgery, or other cardiac condition."
+      },
+      {
+        "title": "Musculoskeletal Physiotherapy",
+        "desc": "Specialized care for restoring mobility, strength, and function to joints, muscles, ligaments, and tendons."
+      },
+      {
+        "title": "Vestibular Rehabilitation",
+        "desc": "Targeted exercise programs to alleviate dizziness, balance problems, and vertigo issues related to the inner ear."
+      },
+      {
+        "title": "Pre & Post Surgery Rehabilitation",
+        "desc": "Tailored physical therapy to prepare your body for surgery and optimize recovery, restoring full range of motion post-operation."
+      },
+      {
+        "title": "Women's Health Physiotherapy",
+        "desc": "Compassionate pelvic floor rehab and support for pre-natal, post-natal, and other gender-specific health conditions."
+      },
+      {
+        "title": "Sports Physiotherapy",
+        "desc": "Focused injury rehabilitation and athletic performance training to help you safely return to sport and prevent future issues."
+      },
+      {
+        "title": "Pediatric Physiotherapy",
+        "desc": "Gentle, play-based therapeutic exercises to support children's physical development, coordination, and motor skills."
+      },
+      {
+        "title": "Geriatric Physiotherapy",
+        "desc": "Focused mobility and strength training to manage arthritis, balance loss, and keep seniors active, safe, and independent."
+      },
+      {
+        "title": "Neuro Physiotherapy",
+        "desc": "Expert rehabilitation for patients recovering from stroke, Parkinson's, Multiple Sclerosis, paralysis, or spinal cord injuries."
+      },
+      {
+        "title": "Home Care Physiotherapy",
+        "desc": "Dedicated professional physiotherapy assessments and treatment programs brought directly to the convenience of your home."
+      }
+    ]
+  },
+  "therapy": {
+    "title": "Therapies",
+    "desc": "Have a glance at the therapies we provide.",
+    "featured": "Featured Treatments",
+    "featuredDesc": "Discover our specialized treatment programs designed to accelerate recovery and restore optimal function.",
+    "learnMore": "Learn more",
+    "manyMore": "Many More...",
+    "manyMoreDesc": "A wide array of evidence-based treatments tailored to your specific recovery needs.",
+    "items": [
+      {
+        "title": "Post-COVID Physiotherapy",
+        "desc": "Comprehensive respiratory and physical rehabilitation programs to help patients regain strength and lung capacity following COVID-19."
+      },
+      {
+        "title": "Shockwave Physiotherapy",
+        "desc": "Advanced non-invasive treatment utilizing acoustic waves to promote healing in subacute, subchronic, and chronic conditions."
+      },
+      {
+        "title": "Chest Physiotherapy",
+        "desc": "Specialized airway clearance techniques and breathing exercises to improve respiratory function and clear lung secretions."
+      },
+      {
+        "title": "Cryotherapy (Cold Therapy)",
+        "desc": "Targeted cold therapy designed to reduce inflammation, alleviate pain, and promote faster recovery from acute injuries."
+      },
+      {
+        "title": "Pelvic Floor Physical Therapy",
+        "desc": "Specialized treatments to address dysfunction, pain, and weakness in the pelvic region, improving core stability and control."
+      },
+      {
+        "title": "Traction Therapy",
+        "desc": "Gentle decompression techniques to relieve pressure on the spine and alleviate nerve pain or disc-related discomfort."
+      },
+      {
+        "title": "Soft Tissue Mobilization",
+        "desc": "Hands-on techniques focused on muscles, ligaments, and fascia to break down scar tissue and enhance flexibility."
+      },
+      {
+        "title": "Myofascial Release (MFR)",
+        "desc": "Targeted sustained pressure to relieve tension in the connective tissues (fascia), reducing pain and restoring motion."
+      },
+      {
+        "title": "Acupuncture",
+        "desc": "Traditional and contemporary acupuncture methods to stimulate the nervous system, alleviate pain, and promote natural healing."
+      }
+    ],
+    "additional": [
+      "Cupping Therapy",
+      "Kinesio Taping / Taping Therapy",
+      "Chiropractic Therapy",
+      "Spinal Decompression / Traction Therapy",
+      "Dry Needling Therapy",
+      "Wax Therapy",
+      "THERMOTHERAPY (Heat Therapy)",
+      "Manual Therapy",
+      "LASER Therapy"
+    ]
+  },
+  "symptoms": {
+    "title": "Symptoms & Conditions",
+    "desc": "Symptoms and conditions of each issue may vary from one another.",
+    "cat1": "General & Upper Body",
+    "cat2": "Neurological Conditions",
+    "cat3": "Spine & Lower Body",
+    "ctaTitle": "Are you suffering from any of these conditions?",
+    "ctaDesc": "Our clinic provides comprehensive assessments and tailored chiropractic adjustments alongside active physiotherapy protocols to aid your path back to comfort.",
+    "ctaButton": "Schedule a Free Assessment",
+    "items1": [
+      "Muscle Spasm",
+      "Tremors",
+      "Joint Cracking",
+      "Sprains & Strains",
+      "Shortness of Breath",
+      "Headache",
+      "Neck Stiffness & Cervical Pain",
+      "Shoulder Impingement",
+      "Frozen Shoulder"
+    ],
+    "items2": [
+      "Paralysis Recovery Support",
+      "Facial Palsy Rehabilitation",
+      "Neurological Movement Dysfunctions",
+      "Balance and Coordination Issues",
+      "Post-Stroke Recovery"
+    ],
+    "items3": [
+      "Sciatica & Radiating Nerve Pain",
+      "Slipped Disc & Herniation Issues",
+      "Chronic Lower Back Pain",
+      "Knee Osteoarthritis & Joint Pain",
+      "Plantar Fasciitis & Foot Pain",
+      "Hip and Pelvic Pain"
+    ]
+  },
+  "gallery": {
+    "badge": "Our Clinic",
+    "title": "Gallery & Facilities",
+    "desc": "Take a virtual tour of our Patna facility, specialized equipment, and clinical environment."
+  }
+}

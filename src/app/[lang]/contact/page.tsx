@@ -1,40 +1,44 @@
 import React from "react";
 import ContactForm from "@/components/contact/ContactForm";
+import { getDictionary } from "@/get-dictionary";
 
 export const metadata = {
   title: "Contact Advance Chiropractic Clinic | Patna, Bihar",
 };
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+
   return (
     <div className="w-full">
       {/* Hero Title */}
       <section className="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop mb-12 mt-12">
         <h1 className="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-deep-blue-primary mb-4">
-          Get in Touch
+          {dict?.contact?.title || "Get in Touch"}
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-          We're here to help you on your journey to optimal health. Reach out to schedule an appointment or ask any questions about our chiropractic care.
+          {dict?.contact?.desc || "We're here to help you on your journey to optimal health. Reach out to schedule an appointment or ask any questions about our chiropractic care."}
         </p>
       </section>
 
       {/* Bento Grid Layout */}
       <section className="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-20">
         {/* Left Column: Contact Form */}
-        <ContactForm />
+        <ContactForm dict={dict} lang={lang} />
 
         {/* Right Column: Info Cards */}
         <div className="lg:col-span-5 flex flex-col gap-gutter">
           {/* Contact Details Card */}
           <div className="bg-surface-container-lowest border border-outline-variant shadow-sm rounded-xl p-6 md:p-8 hover:shadow-md transition-shadow duration-300 group">
-            <h3 className="font-headline-md text-headline-md text-deep-blue-primary mb-6 border-b border-outline-variant/30 pb-4">Clinic Information</h3>
+            <h3 className="font-headline-md text-headline-md text-deep-blue-primary mb-6 border-b border-outline-variant/30 pb-4">{dict?.contact?.clinicInfo || "Clinic Information"}</h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="bg-soft-blue-accent p-3 rounded-full text-deep-blue-primary group-hover:bg-deep-blue-primary group-hover:text-on-primary transition-colors">
                   <span className="material-symbols-outlined filled">call</span>
                 </div>
                 <div>
-                  <p className="font-label-md text-label-md text-on-surface-variant mb-1">Phone</p>
+                  <p className="font-label-md text-label-md text-on-surface-variant mb-1">{dict?.contact?.phone || "Phone"}</p>
                   <a href="tel:+918409801156" className="font-body-lg text-body-lg text-on-surface font-semibold hover:text-deep-blue-primary transition-colors">
                     +91 84098 01156
                   </a>
@@ -45,7 +49,7 @@ export default function ContactPage() {
                   <span className="material-symbols-outlined filled">email</span>
                 </div>
                 <div>
-                  <p className="font-label-md text-label-md text-on-surface-variant mb-1">Email Addresses</p>
+                  <p className="font-label-md text-label-md text-on-surface-variant mb-1">{dict?.contact?.email || "Email Addresses"}</p>
                   <p className="font-body-md text-body-md text-on-surface">info@advancechiropractic.in</p>
                   <p className="font-body-md text-body-md text-on-surface mt-1">dr.surendr1@gmail.com</p>
                 </div>
@@ -60,22 +64,22 @@ export default function ContactPage() {
                 <span className="material-symbols-outlined filled">location_on</span>
               </div>
               <div>
-                <p className="font-label-md text-label-md text-on-surface-variant mb-1">Location</p>
+                <p className="font-label-md text-label-md text-on-surface-variant mb-1">{dict?.contact?.location || "Location"}</p>
                 <a 
-                  href="https://www.google.com/maps/search/?api=1&query=Advance+Chiropractic+clinic,+Bombay+dyeing+building,+Kankarbagh+Colony+More,+Mithapur,+Patna,+Bihar+800001" 
+                  href="https://www.google.com/maps/search/?api=1&query=Advance+Chiropractic+clinic,+Bombay+dyeing+building,+Kankarbagh+Colony+More,+Ghrounda,+Patna,+Bihar+800001" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="font-body-md text-body-md text-on-surface leading-relaxed hover:text-deep-blue-primary transition-colors block"
                 >
                   Advance Chiropractic Clinic,<br />
                   Bombay Dyeing Building, Kankarbagh Colony More,<br />
-                  Mithapur, Patna, Bihar - 800001
+                  Ghrounda, Patna, Bihar - 800001
                 </a>
               </div>
             </div>
             {/* Map Link */}
             <a 
-              href="https://www.google.com/maps/search/?api=1&query=Advance+Chiropractic+clinic,+Bombay+dyeing+building,+Kankarbagh+Colony+More,+Mithapur,+Patna,+Bihar+800001" 
+              href="https://www.google.com/maps/search/?api=1&query=Advance+Chiropractic+clinic,+Bombay+dyeing+building,+Kankarbagh+Colony+More,+Ghrounda,+Patna,+Bihar+800001" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full h-48 bg-surface-container-high rounded-lg border border-outline-variant overflow-hidden relative mt-auto flex items-center justify-center bg-cover bg-center group cursor-pointer" 
@@ -84,14 +88,14 @@ export default function ContactPage() {
               <div className="absolute inset-0 bg-background/40 backdrop-blur-[2px] group-hover:backdrop-blur-none transition-all duration-300"></div>
               <div className="relative z-10 bg-surface-container-lowest/90 px-4 py-2 rounded-lg shadow-sm border border-outline-variant flex items-center gap-2 group-hover:bg-surface transition-colors">
                 <span className="material-symbols-outlined text-healthcare-teal">map</span>
-                <span className="font-label-md text-label-md text-deep-blue-primary">View on Maps</span>
+                <span className="font-label-md text-label-md text-deep-blue-primary">{dict?.contact?.viewMap || "View on Maps"}</span>
               </div>
             </a>
           </div>
 
           {/* Socials Card */}
           <div className="bg-surface-container-lowest border border-outline-variant shadow-sm rounded-xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <h3 className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Connect With Us</h3>
+            <h3 className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">{dict?.contact?.connect || "Connect With Us"}</h3>
             <div className="flex flex-wrap gap-3">
               <a 
                 href="https://www.facebook.com/drsurendrapatna" 
