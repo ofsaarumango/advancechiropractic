@@ -2,12 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 
-export default function Footer({ dict }: { dict?: any }) {
+export default function Footer({ dict, lang = "en" }: { dict?: any; lang?: string }) {
+  const getPath = (path: string) => {
+    return `/${lang}${path === "/" ? "" : path}`;
+  };
+
   return (
     <footer className="bg-primary w-full border-t border-primary-fixed-dim/20 transition-opacity duration-300 hover:opacity-100">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter py-12 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
         <div className="col-span-1 md:col-span-1 space-y-6">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href={getPath("/")} className="flex items-center gap-2">
             <div className="bg-white rounded-full w-10 h-10 flex items-center justify-center p-0.5 overflow-hidden">
               <Image src="/logo.png" alt="Advance Chiropractic Logo" width={40} height={40} className="object-contain w-full h-full" />
             </div>
@@ -58,16 +62,16 @@ export default function Footer({ dict }: { dict?: any }) {
         <div className="col-span-1">
           <h4 className="text-headline-md font-headline-md text-on-primary mb-6">{dict?.footer?.quickLinks || "Quick Links"}</h4>
           <nav aria-label="Footer Navigation" className="flex flex-col gap-3">
-            <Link href="/" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
+            <Link href={getPath("/")} className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
               {dict?.nav?.home || "Home"}
             </Link>
-            <Link href="/about" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
+            <Link href={getPath("/about")} className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
               {dict?.nav?.about || "About"}
             </Link>
-            <Link href="/services" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
+            <Link href={getPath("/services")} className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
               {dict?.nav?.services || "Services"}
             </Link>
-            <Link href="/gallery" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
+            <Link href={getPath("/gallery")} className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
               {dict?.nav?.gallery || "Gallery"}
             </Link>
           </nav>
@@ -76,13 +80,13 @@ export default function Footer({ dict }: { dict?: any }) {
         <div className="col-span-1">
           <h4 className="text-headline-md font-headline-md text-on-primary mb-6">{dict?.footer?.support || "Support"}</h4>
           <nav aria-label="Support Navigation" className="flex flex-col gap-3">
-            <Link href="/contact" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
+            <Link href={getPath("/contact")} className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
               {dict?.footer?.contact || "Contact Us"}
             </Link>
-            <Link href="/privacy" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
+            <Link href={getPath("/privacy")} className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
               {dict?.footer?.privacy || "Privacy Policy"}
             </Link>
-            <Link href="/terms" className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
+            <Link href={getPath("/terms")} className="text-on-primary/80 hover:text-on-primary text-label-md font-label-md hover:underline decoration-healthcare-teal underline-offset-4 w-fit">
               {dict?.footer?.terms || "Terms of Service"}
             </Link>
           </nav>

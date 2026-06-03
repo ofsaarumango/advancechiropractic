@@ -38,7 +38,7 @@ export default async function RootLayout(props: {
         <main className="flex-1">
           {props.children}
         </main>
-        <Footer dict={dict} />
+        <Footer dict={dict} lang={lang} />
         {/* Floating WhatsApp Button */}
         <a
           href="https://wa.me/918409801156"
