@@ -92,13 +92,13 @@ export default function Footer() {
           <h4 className="text-headline-md font-headline-md text-on-primary mb-6">Contact</h4>
           <div className="space-y-4 text-on-primary/80 text-body-md font-body-md">
             <a 
-              href="https://maps.app.goo.gl/P7SwCwwmZwbxiS5D8" 
+              href="https://www.google.com/maps/search/?api=1&query=Advance+Chiropractic+clinic,+Bombay+dyeing+building,+Kankarbagh+Colony+More,+Mithapur,+Patna,+Bihar+800001" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-start gap-3 hover:text-on-primary transition-colors group"
             >
               <span aria-hidden="true" className="material-symbols-outlined text-healthcare-teal">location_on</span>
-              <span>Ground Floor, Bombay Dyeing Building,<br />Kankarbagh Colony More,<br />Patna, Bihar - 800020</span>
+              <span>Advance Chiropractic Clinic,<br />Bombay Dyeing Building, Kankarbagh Colony More,<br />Mithapur, Patna, Bihar - 800001</span>
             </a>
             <a 
               href="tel:+918409801156" 

@@ -54,13 +54,13 @@ export default function TopNavBar() {
               <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
             </div>
             <a 
-              href="https://maps.app.goo.gl/P7SwCwwmZwbxiS5D8" 
+              href="https://www.google.com/maps/search/?api=1&query=Advance+Chiropractic+clinic,+Bombay+dyeing+building,+Kankarbagh+Colony+More,+Mithapur,+Patna,+Bihar+800001" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center gap-2 hover:text-healthcare-teal transition-colors"
             >
               <span aria-hidden="true" className="material-symbols-outlined text-[16px] text-healthcare-teal">location_on</span>
-              <span>Kankarbagh Colony More, Patna</span>
+              <span>Bombay Dyeing Bldg, Mithapur, Patna</span>
             </a>
           </div>
           <div className="flex items-center gap-4">

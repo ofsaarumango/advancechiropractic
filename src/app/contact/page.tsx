@@ -1,4 +1,5 @@
 import React from "react";
+import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata = {
   title: "Contact Advance Chiropractic Clinic | Patna, Bihar",
@@ -20,46 +21,7 @@ export default function ContactPage() {
       {/* Bento Grid Layout */}
       <section className="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-20">
         {/* Left Column: Contact Form */}
-        <div className="lg:col-span-7 bg-surface-container-lowest border border-outline-variant shadow-sm rounded-xl p-6 md:p-10 flex flex-col justify-between">
-          <div>
-            <h2 className="font-headline-md text-headline-md text-deep-blue-primary mb-6 flex items-center gap-2">
-              <span className="material-symbols-outlined text-healthcare-teal">mail</span>
-              Send a Message
-            </h2>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex flex-col gap-2">
-                  <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="firstName">First Name</label>
-                  <input className="border border-outline-variant focus:border-deep-blue-primary focus:ring-1 focus:ring-deep-blue-primary/20 font-body-md text-body-md bg-transparent rounded-lg px-4 py-3 w-full outline-none transition-all" id="firstName" placeholder="Jane" type="text" />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="lastName">Last Name</label>
-                  <input className="border border-outline-variant focus:border-deep-blue-primary focus:ring-1 focus:ring-deep-blue-primary/20 font-body-md text-body-md bg-transparent rounded-lg px-4 py-3 w-full outline-none transition-all" id="lastName" placeholder="Doe" type="text" />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex flex-col gap-2">
-                  <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="email">Email Address</label>
-                  <input className="border border-outline-variant focus:border-deep-blue-primary focus:ring-1 focus:ring-deep-blue-primary/20 font-body-md text-body-md bg-transparent rounded-lg px-4 py-3 w-full outline-none transition-all" id="email" placeholder="jane@example.com" type="email" />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="phone">Phone Number</label>
-                  <input className="border border-outline-variant focus:border-deep-blue-primary focus:ring-1 focus:ring-deep-blue-primary/20 font-body-md text-body-md bg-transparent rounded-lg px-4 py-3 w-full outline-none transition-all" id="phone" placeholder="+91 84098 01156" type="tel" />
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="message">How can we help you?</label>
-                <textarea className="border border-outline-variant focus:border-deep-blue-primary focus:ring-1 focus:ring-deep-blue-primary/20 font-body-md text-body-md bg-transparent rounded-lg px-4 py-3 w-full outline-none transition-all resize-none" id="message" placeholder="Describe your symptoms or reason for visit..." rows={5}></textarea>
-              </div>
-            </form>
-          </div>
-          <div className="mt-8 pt-6 border-t border-outline-variant/30 flex justify-end">
-            <button className="bg-deep-blue-primary text-on-primary hover:bg-healthcare-teal transition-colors px-8 py-3 rounded-lg font-label-md text-label-md flex items-center gap-2">
-              Submit Request
-              <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
-            </button>
-          </div>
-        </div>
+        <ContactForm />
 
         {/* Right Column: Info Cards */}
         <div className="lg:col-span-5 flex flex-col gap-gutter">
@@ -100,20 +62,20 @@ export default function ContactPage() {
               <div>
                 <p className="font-label-md text-label-md text-on-surface-variant mb-1">Location</p>
                 <a 
-                  href="https://maps.app.goo.gl/P7SwCwwmZwbxiS5D8" 
+                  href="https://www.google.com/maps/search/?api=1&query=Advance+Chiropractic+clinic,+Bombay+dyeing+building,+Kankarbagh+Colony+More,+Mithapur,+Patna,+Bihar+800001" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="font-body-md text-body-md text-on-surface leading-relaxed hover:text-deep-blue-primary transition-colors block"
                 >
-                  Ground Floor, Bombay Dyeing Building,<br />
-                  Kankarbagh Colony More,<br />
-                  Patna, Bihar - 800020
+                  Advance Chiropractic Clinic,<br />
+                  Bombay Dyeing Building, Kankarbagh Colony More,<br />
+                  Mithapur, Patna, Bihar - 800001
                 </a>
               </div>
             </div>
             {/* Map Link */}
             <a 
-              href="https://maps.app.goo.gl/P7SwCwwmZwbxiS5D8" 
+              href="https://www.google.com/maps/search/?api=1&query=Advance+Chiropractic+clinic,+Bombay+dyeing+building,+Kankarbagh+Colony+More,+Mithapur,+Patna,+Bihar+800001" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full h-48 bg-surface-container-high rounded-lg border border-outline-variant overflow-hidden relative mt-auto flex items-center justify-center bg-cover bg-center group cursor-pointer" 
