@@ -7,13 +7,14 @@ import { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
+  const prefix = lang === 'en' ? '' : `/${lang}`;
   return {
     title: "Symptoms & Conditions | Advance Chiropractic Clinic",
     description: "Explore common symptoms and conditions treated at Advance Chiropractic Clinic in Patna. We provide holistic care for back pain, sciatica, headaches, and joint issues.",
     alternates: {
-      canonical: `/${lang}/symptoms`,
+      canonical: `${prefix}/symptoms`,
       languages: {
-        'en': '/en/symptoms',
+        'en': '/symptoms',
         'hi': '/hi/symptoms',
       },
     },

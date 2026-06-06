@@ -4,7 +4,9 @@ import React from "react";
 
 export default function Footer({ dict, lang = "en" }: { dict?: any; lang?: string }) {
   const getPath = (path: string) => {
-    return `/${lang}${path === "/" ? "" : path}`;
+    if (lang === "en") return path === "/" ? "/" : path;
+    if (path === "/") return `/${lang}`;
+    return `/${lang}${path}`;
   };
 
   return (

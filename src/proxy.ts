@@ -23,7 +23,7 @@ function getLocale(request: NextRequest): string {
     return cookieLocale;
   }
 
-  // Look at the Accept-Language header (simplified matcher)
+  // Look at the Accept-Language header
   const acceptLanguage = request.headers.get("accept-language");
   if (acceptLanguage) {
     if (acceptLanguage.includes("hi")) {
@@ -31,7 +31,7 @@ function getLocale(request: NextRequest): string {
     }
   }
 
-  return i18n.defaultLocale;
+  return i18n.defaultLocale; // default is 'en'
 }
 
 export function proxy(request: NextRequest) {
@@ -47,26 +47,44 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
-    const locale = getLocale(request);
+    const locale = getLocale(request) || i18n.defaultLocale;
 
-    // e.g. incoming request is /about
-    // The new URL is now /en/about
+    if (locale === 'en') {
+      // Rewrite instead of redirecting so the URL stays without /en
+      const url = request.nextUrl.clone();
+      url.pathname = `/en${pathname === '/' ? '' : pathname}`;
+      const response = NextResponse.rewrite(url);
+      response.cookies.set('NEXT_LOCALE', locale, { path: '/', maxAge: 60 * 60 * 24 * 365 });
+      return response;
+    }
+
+    // e.g. incoming request is /about for Hindi
+    // The new URL is now /hi/about
     const url = new URL(`/${locale}${pathname === '/' ? '' : pathname}`, request.url);
-    // Keep search params
     url.search = request.nextUrl.search;
     
     const response = NextResponse.redirect(url);
-    // Persist locale via cookie
     response.cookies.set('NEXT_LOCALE', locale, { path: '/', maxAge: 60 * 60 * 24 * 365 });
     return response;
   }
+
+  // If the pathname has the 'en' locale explicitly (e.g. /en/about or /en),
+  // we redirect them to the equivalent route without /en to avoid duplicate content.
+  if (pathname.startsWith('/en/') || pathname === '/en') {
+    const newPath = pathname.replace(/^\/en/, '') || '/';
+    const url = request.nextUrl.clone();
+    url.pathname = newPath;
+    url.search = request.nextUrl.search;
+    const response = NextResponse.redirect(url);
+    return response;
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {

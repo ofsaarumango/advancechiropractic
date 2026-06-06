@@ -21,9 +21,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const sitemapEntries = routes.flatMap((route) => {
     return i18n.locales.map((locale) => {
       // Create path depending on whether it's the root '/' or a specific page '/about'
-      const path = route === '' ? `/${locale}` : `/${locale}${route}`;
+      // Omitting '/en' from the URL for the default English locale
+      const prefix = locale === 'en' ? '' : `/${locale}`;
+      const path = route === '' ? prefix : `${prefix}${route}`;
       return {
-        url: `${baseUrl}${path}`,
+        url: `${baseUrl}${path || '/'}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
         priority: route === '' ? 1 : 0.8,

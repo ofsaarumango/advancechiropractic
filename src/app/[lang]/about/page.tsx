@@ -6,13 +6,14 @@ import { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
+  const prefix = lang === 'en' ? '' : `/${lang}`;
   return {
     title: "About Dr. Surendra Kumar & Our Clinic | Advance Chiropractic Clinic",
     description: "Learn about Dr. Surendra Kumar and Advance Chiropractic Clinic in Patna. Restoring mobility, alleviating pain, and enhancing your quality of life.",
     alternates: {
-      canonical: `/${lang}/about`,
+      canonical: `${prefix}/about`,
       languages: {
-        'en': '/en/about',
+        'en': '/about',
         'hi': '/hi/about',
       },
     },

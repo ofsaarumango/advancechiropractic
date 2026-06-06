@@ -8,11 +8,12 @@ import { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
+  const prefix = lang === 'en' ? '' : `/${lang}`;
   return {
     alternates: {
-      canonical: `/${lang}`,
+      canonical: prefix || '/',
       languages: {
-        'en': '/en',
+        'en': '/',
         'hi': '/hi',
       },
     },

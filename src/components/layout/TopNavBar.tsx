@@ -13,6 +13,7 @@ export default function TopNavBar({ dict, lang }: { dict: any, lang: string }) {
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
 
   const getPath = (path: string) => {
+    if (lang === "en") return path === "/" ? "/" : path;
     if (path === "/") return `/${lang}`;
     return `/${lang}${path}`;
   };
@@ -20,10 +21,11 @@ export default function TopNavBar({ dict, lang }: { dict: any, lang: string }) {
   const isActive = (path: string, isDropdownParent: boolean = false) => {
     const fullPath = getPath(path);
     if (path === "/") {
-      return pathname === `/${lang}` || pathname === `/${lang}/`;
+      return pathname === fullPath || pathname === `${fullPath}/`;
     }
     if (isDropdownParent) {
-      return pathname.startsWith(`/${lang}/services`) || pathname.startsWith(`/${lang}/therapy`) || pathname.startsWith(`/${lang}/symptoms`);
+      const prefix = lang === 'en' ? '' : `/${lang}`;
+      return pathname.startsWith(`${prefix}/services`) || pathname.startsWith(`${prefix}/therapy`) || pathname.startsWith(`${prefix}/symptoms`);
     }
     return pathname === fullPath || pathname.startsWith(`${fullPath}/`);
   };
@@ -51,7 +53,8 @@ export default function TopNavBar({ dict, lang }: { dict: any, lang: string }) {
     setIsLangMenuOpen(false);
     document.cookie = `NEXT_LOCALE=${newLang}; path=/; max-age=31536000`;
     const currentPath = pathname.replace(/^\/(en|hi)/, '') || '/';
-    window.location.href = `/${newLang}${currentPath}`;
+    const targetPath = newLang === 'en' ? currentPath : `/${newLang}${currentPath === '/' ? '' : currentPath}`;
+    window.location.href = targetPath || '/';
   };
 
   return (

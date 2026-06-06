@@ -7,13 +7,14 @@ import { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
+  const prefix = lang === 'en' ? '' : `/${lang}`;
   return {
     title: "Physiotherapy Therapies | Advance Chiropractic Clinic",
     description: "Explore the comprehensive range of therapies offered at Advance Chiropractic Clinic, including Post-COVID Physiotherapy, Shockwave Therapy, and more.",
     alternates: {
-      canonical: `/${lang}/therapy`,
+      canonical: `${prefix}/therapy`,
       languages: {
-        'en': '/en/therapy',
+        'en': '/therapy',
         'hi': '/hi/therapy',
       },
     },

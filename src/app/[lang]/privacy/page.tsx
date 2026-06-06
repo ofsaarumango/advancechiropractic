@@ -4,15 +4,16 @@ import type { Metadata } from "next";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const isHi = lang === "hi";
+  const prefix = lang === 'en' ? '' : `/${lang}`;
   return {
     title: isHi ? "गोपनीयता नीति | एडवांस कायरोप्रैक्टिक क्लिनिक" : "Privacy Policy | Advance Chiropractic Clinic",
     description: isHi 
       ? "एडवांस कायरोप्रैक्टिक क्लिनिक, पटना के लिए हमारी गोपनीयता नीति पढ़ें। हम आपके व्यक्तिगत और स्वास्थ्य डेटा की सुरक्षा के लिए प्रतिबद्ध हैं।"
       : "Read the Privacy Policy for Advance Chiropractic Clinic in Patna. We are committed to protecting your personal and medical records data.",
     alternates: {
-      canonical: `/${lang}/privacy`,
+      canonical: `${prefix}/privacy`,
       languages: {
-        'en': '/en/privacy',
+        'en': '/privacy',
         'hi': '/hi/privacy',
       },
     }

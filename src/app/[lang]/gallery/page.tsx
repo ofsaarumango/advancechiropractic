@@ -6,13 +6,14 @@ import { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
+  const prefix = lang === 'en' ? '' : `/${lang}`;
   return {
     title: "Gallery & Facilities | Advance Chiropractic Clinic",
     description: "View the gallery and facilities at Advance Chiropractic Clinic in Patna.",
     alternates: {
-      canonical: `/${lang}/gallery`,
+      canonical: `${prefix}/gallery`,
       languages: {
-        'en': '/en/gallery',
+        'en': '/gallery',
         'hi': '/hi/gallery',
       },
     },
