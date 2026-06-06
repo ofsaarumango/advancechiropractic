@@ -11,6 +11,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Read the Terms of Service for Advance Chiropractic Clinic in Patna. Understand our clinic guidelines, booking policies, and medical disclaimers.",
     alternates: {
       canonical: `/${lang}/terms`,
+      languages: {
+        'en': '/en/terms',
+        'hi': '/hi/terms',
+      },
     }
   };
 }

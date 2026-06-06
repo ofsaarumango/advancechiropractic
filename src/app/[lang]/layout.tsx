@@ -5,9 +5,37 @@ import Footer from "@/components/layout/Footer";
 import { getDictionary } from "@/get-dictionary";
 import { Locale, i18n } from "@/i18n-config";
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://advancechiropractic.in';
+
 export const metadata: Metadata = {
-  title: "Advance Chiropractic Clinic | Best Chiropractic Clinic in Patna",
-  description: "Experience expert chiropractic care and cure at Advance Chiropractic Clinic in Patna, led by Dr. Surendra Kumar. Specializing in back pain, neck pain, sciatica, and more.",
+  metadataBase: new URL(baseUrl),
+  title: {
+    template: '%s | Advance Chiropractic Clinic',
+    default: 'Advance Chiropractic Clinic | Best Chiropractic Clinic in Patna',
+  },
+  description: 'Experience expert chiropractic care and cure at Advance Chiropractic Clinic in Patna, led by Dr. Surendra Kumar. Specializing in back pain, neck pain, sciatica, and more.',
+  keywords: ['Chiropractic Clinic Patna', 'Back Pain Treatment', 'Neck Pain Therapy', 'Sciatica Relief', 'Dr. Surendra Kumar', 'Advance Chiropractic Clinic', 'Best Chiropractor in Patna'],
+  authors: [{ name: 'Dr. Surendra Kumar' }],
+  creator: 'Advance Chiropractic Clinic',
+  publisher: 'Advance Chiropractic Clinic',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: 'Advance Chiropractic Clinic | Best Chiropractic Clinic in Patna',
+    description: 'Experience expert chiropractic care and cure at Advance Chiropractic Clinic in Patna.',
+    url: baseUrl,
+    siteName: 'Advance Chiropractic Clinic',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Advance Chiropractic Clinic',
+    description: 'Experience expert chiropractic care and cure at Advance Chiropractic Clinic in Patna.',
+  },
 };
 
 export async function generateStaticParams() {
@@ -34,6 +62,52 @@ export default async function RootLayout(props: {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body-md pt-20 lg:pt-[117px] min-h-screen flex flex-col">
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MedicalClinic",
+              "name": "Advance Chiropractic Clinic",
+              "image": `${baseUrl}/logo.png`,
+              "@id": `${baseUrl}`,
+              "url": `${baseUrl}`,
+              "telephone": "+918409801156",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "N/A",
+                "addressLocality": "Patna",
+                "addressRegion": "Bihar",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 25.594095,
+                "longitude": 85.137566
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "09:00",
+                "closes": "20:00"
+              },
+              "sameAs": [
+                "https://www.facebook.com/",
+                "https://www.instagram.com/"
+              ],
+              "medicalSpecialty": "Chiropractic"
+            })
+          }}
+        />
         <TopNavBar dict={dict} lang={lang} />
         <main className="flex-1">
           {props.children}

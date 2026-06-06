@@ -3,10 +3,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { getDictionary } from "@/get-dictionary";
 
-export const metadata = {
-  title: "Symptoms & Conditions | Advance Chiropractic Clinic",
-  description: "Explore common symptoms and conditions treated at Advance Chiropractic Clinic in Patna. We provide holistic care for back pain, sciatica, headaches, and joint issues."
-};
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: "Symptoms & Conditions | Advance Chiropractic Clinic",
+    description: "Explore common symptoms and conditions treated at Advance Chiropractic Clinic in Patna. We provide holistic care for back pain, sciatica, headaches, and joint issues.",
+    alternates: {
+      canonical: `/${lang}/symptoms`,
+      languages: {
+        'en': '/en/symptoms',
+        'hi': '/hi/symptoms',
+      },
+    },
+  };
+}
 
 export default async function SymptomsPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

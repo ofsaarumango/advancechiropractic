@@ -3,10 +3,22 @@ import Link from "next/link";
 import React from "react";
 import { getDictionary } from "@/get-dictionary";
 
-export const metadata = {
-  title: "Physiotherapy Services | Advance Chiropractic Clinic",
-  description: "Explore the comprehensive physiotherapy services at Advance Chiropractic Clinic in Patna. We specialize in Cardiac, Musculoskeletal, Vestibular, Neuro, Sports, and Home Care Physiotherapy."
-};
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: "Physiotherapy Services | Advance Chiropractic Clinic",
+    description: "Explore the comprehensive physiotherapy services at Advance Chiropractic Clinic in Patna. We specialize in Cardiac, Musculoskeletal, Vestibular, Neuro, Sports, and Home Care Physiotherapy.",
+    alternates: {
+      canonical: `/${lang}/services`,
+      languages: {
+        'en': '/en/services',
+        'hi': '/hi/services',
+      },
+    },
+  };
+}
 
 export default async function ServicesPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

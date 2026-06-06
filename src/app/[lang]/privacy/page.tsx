@@ -11,6 +11,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Read the Privacy Policy for Advance Chiropractic Clinic in Patna. We are committed to protecting your personal and medical records data.",
     alternates: {
       canonical: `/${lang}/privacy`,
+      languages: {
+        'en': '/en/privacy',
+        'hi': '/hi/privacy',
+      },
     }
   };
 }

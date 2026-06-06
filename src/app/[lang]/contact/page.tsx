@@ -2,9 +2,22 @@ import React from "react";
 import ContactForm from "@/components/contact/ContactForm";
 import { getDictionary } from "@/get-dictionary";
 
-export const metadata = {
-  title: "Contact Advance Chiropractic Clinic | Patna, Bihar",
-};
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: "Contact Advance Chiropractic Clinic | Patna, Bihar",
+    description: "Get in touch with Advance Chiropractic Clinic in Patna. Schedule an appointment for expert chiropractic care.",
+    alternates: {
+      canonical: `/${lang}/contact`,
+      languages: {
+        'en': '/en/contact',
+        'hi': '/hi/contact',
+      },
+    },
+  };
+}
 
 export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

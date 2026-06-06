@@ -2,10 +2,22 @@ import Gallery from "@/components/home/Gallery";
 import React from "react";
 import { getDictionary } from "@/get-dictionary";
 
-export const metadata = {
-  title: "Gallery & Facilities | Advance Chiropractic Clinic",
-  description: "View the gallery and facilities at Advance Chiropractic Clinic in Patna.",
-};
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: "Gallery & Facilities | Advance Chiropractic Clinic",
+    description: "View the gallery and facilities at Advance Chiropractic Clinic in Patna.",
+    alternates: {
+      canonical: `/${lang}/gallery`,
+      languages: {
+        'en': '/en/gallery',
+        'hi': '/hi/gallery',
+      },
+    },
+  };
+}
 
 export default async function GalleryPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

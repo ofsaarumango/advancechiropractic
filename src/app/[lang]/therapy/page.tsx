@@ -3,10 +3,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { getDictionary } from "@/get-dictionary";
 
-export const metadata = {
-  title: "Physiotherapy Therapies | Advance Chiropractic Clinic",
-  description: "Explore the comprehensive range of therapies offered at Advance Chiropractic Clinic, including Post-COVID Physiotherapy, Shockwave Therapy, and more."
-};
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: "Physiotherapy Therapies | Advance Chiropractic Clinic",
+    description: "Explore the comprehensive range of therapies offered at Advance Chiropractic Clinic, including Post-COVID Physiotherapy, Shockwave Therapy, and more.",
+    alternates: {
+      canonical: `/${lang}/therapy`,
+      languages: {
+        'en': '/en/therapy',
+        'hi': '/hi/therapy',
+      },
+    },
+  };
+}
 
 export default async function TherapyPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

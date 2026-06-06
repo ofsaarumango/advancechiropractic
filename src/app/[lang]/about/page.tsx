@@ -2,9 +2,22 @@ import Image from "next/image";
 import React from "react";
 import { getDictionary } from "@/get-dictionary";
 
-export const metadata = {
-  title: "About Dr. Surendra Kumar & Our Clinic | Advance Chiropractic Clinic",
-};
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: "About Dr. Surendra Kumar & Our Clinic | Advance Chiropractic Clinic",
+    description: "Learn about Dr. Surendra Kumar and Advance Chiropractic Clinic in Patna. Restoring mobility, alleviating pain, and enhancing your quality of life.",
+    alternates: {
+      canonical: `/${lang}/about`,
+      languages: {
+        'en': '/en/about',
+        'hi': '/hi/about',
+      },
+    },
+  };
+}
 
 export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

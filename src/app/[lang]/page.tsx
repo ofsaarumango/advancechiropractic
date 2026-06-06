@@ -4,6 +4,20 @@ import SymptomsAccordion from "@/components/home/SymptomsAccordion";
 import Testimonials from "@/components/home/Testimonials";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    alternates: {
+      canonical: `/${lang}`,
+      languages: {
+        'en': '/en',
+        'hi': '/hi',
+      },
+    },
+  };
+}
 
 export default async function Home(props: { params: Promise<{ lang: string }> }) {
   const params = await props.params;
