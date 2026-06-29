@@ -5,7 +5,6 @@ import React, { useState } from "react";
 export default function ContactForm({ dict, lang }: { dict?: any, lang?: string }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
@@ -22,7 +21,6 @@ export default function ContactForm({ dict, lang }: { dict?: any, lang?: string 
       `I would like to request an appointment.\n\n` +
       `*Name:* ${firstName} ${lastName}\n` +
       `*Phone:* ${phone}\n` +
-      `*Email:* ${email || "Not provided"}\n` +
       `*Message:* ${message || "Not provided"}`;
       
     const encodedText = encodeURIComponent(formattedMessage);
@@ -64,30 +62,17 @@ export default function ContactForm({ dict, lang }: { dict?: any, lang?: string 
                 />
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex flex-col gap-2">
-                <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="email">{dict?.contact?.email || "Email Address"}</label>
-                <input 
-                  className="border border-outline-variant focus:border-deep-blue-primary focus:ring-1 focus:ring-deep-blue-primary/20 font-body-md text-body-md bg-transparent rounded-lg px-4 py-3 w-full outline-none transition-all" 
-                  id="email" 
-                  placeholder="jane@example.com" 
-                  type="email" 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="phone">{dict?.contact?.phone || "Phone Number *"}</label>
-                <input 
-                  className="border border-outline-variant focus:border-deep-blue-primary focus:ring-1 focus:ring-deep-blue-primary/20 font-body-md text-body-md bg-transparent rounded-lg px-4 py-3 w-full outline-none transition-all" 
-                  id="phone" 
-                  placeholder="+91 84098 01156" 
-                  type="tel" 
-                  required
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-              </div>
+            <div className="flex flex-col gap-2">
+              <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="phone">{dict?.contact?.phone || "Phone Number *"}</label>
+              <input 
+                className="border border-outline-variant focus:border-deep-blue-primary focus:ring-1 focus:ring-deep-blue-primary/20 font-body-md text-body-md bg-transparent rounded-lg px-4 py-3 w-full outline-none transition-all" 
+                id="phone" 
+                placeholder="+91 84098 01156" 
+                type="tel" 
+                required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
             </div>
             <div className="flex flex-col gap-2">
               <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="message">{dict?.contact?.help || "How can we help you?"}</label>
